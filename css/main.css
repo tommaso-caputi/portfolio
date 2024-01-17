@@ -1,0 +1,41 @@
+:root {
+    --foreground-color: black;
+    --background-color: white;
+}
+
+body {
+    font-family: monospace;
+    color: var(--foreground-color);
+    background-color: var(--background-color);
+    padding-top: 10%;
+    padding-left: 20%;
+    font-size: x-large;
+}
+
+.x-large-text {
+    font-size: x-large;
+}
+
+.medium-text {
+    font-size: large;
+}
+
+
+/* cursor --------------------------------------------------------*/
+@keyframes alternating-colors {
+    0% {
+        color: var(--background-color);
+        background-color: var(--foreground-color);
+    }
+
+    50% {
+        color: var(--foreground-color);
+        background-color: var(--background-color);
+    }
+}
+
+.cursor {
+    animation: alternating-colors 2s steps(1, jump-end) infinite;
+}
+
+/*----------------------------------------------------------------*/
