@@ -1,16 +1,12 @@
 const main = document.getElementById('main');
 const cursor = document.getElementById('cursor');
 
-const writeDelay = 0;
+const writeDelay = 20;
 const textSizes = ['x-large-text', 'medium-text'];
 var textSize = textSizes[0]
 
-window.addEventListener('load', async () => {
-    await addMultipleLines(["Hi I'm tommaso caputi,", "a developer and a student of Politecnico di Bari", " "])
-    textSize = textSizes[1]
-    await addMultipleLines(["1. About Me", "2. Projects", "3. Contact", " "])
-    textSize = textSizes[0]
-    addLine("$ ")
+window.addEventListener('load', () => {
+    init()
 });
 
 window.addEventListener("keydown", (key) => {
@@ -29,6 +25,12 @@ window.addEventListener("keydown", (key) => {
     }
 })
 
+const init = async () => {
+    await addMultipleLines(["Hi I'm tommaso caputi,", "a developer and a student of Politecnico di Bari", " "])
+    textSize = textSizes[1]
+    await addMultipleLines(["1. About Me", "2. Projects", "3. Contact", " "])
+    addLine("$ ")
+}
 
 const addMultipleLines = async (lines) => {
     for (const line of lines) {
