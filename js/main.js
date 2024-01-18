@@ -84,7 +84,7 @@ const removeCursor = () => {
 
 window.addEventListener('click', () => {
     var r = document.querySelector(':root')
-    if (r.style.getPropertyValue('--background-color') == 'white') {
+    if (r.style.getPropertyValue('--background-color') == 'white' || r.style.getPropertyValue('--background-color') == '') {
         r.style.setProperty('--background-color', 'black');
         r.style.setProperty('--foreground-color', 'white');
     } else {
