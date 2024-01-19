@@ -1,7 +1,7 @@
 const main = document.getElementById('main');
 const cursor = document.getElementById('cursor');
 
-const writeDelay = 20;
+const writeDelay = 0;
 const textSizes = ['x-large-text', 'medium-text'];
 var textSize = textSizes[0]
 
@@ -9,13 +9,22 @@ window.addEventListener('load', () => {
     init()
 });
 
+const init = async () => {
+    await addMultipleLines(["Hi I'm tommaso caputi,", "", "a developer and a student of Politecnico di Bari", "", ""])
+    textSize = textSizes[1]
+    await addMultipleLines(["1. About Me", "", "2. Projects", "", "3. Contact", "", ""])
+    addLine("$ ")
+}
+
+
+// function for handle user input ---------------------------------
 window.addEventListener("keydown", (key) => {
     switch (key.key) {
         case "Backspace":
             removeChar()
             break;
         case "Enter":
-            alert()
+            action();
             break;
         default:
             if (/^[a-zA-Z0-9]$/.test(key.key)) {
@@ -25,17 +34,42 @@ window.addEventListener("keydown", (key) => {
     }
 })
 
-const init = async () => {
-    await addMultipleLines(["Hi I'm tommaso caputi,", "a developer and a student of Politecnico di Bari", " "])
-    textSize = textSizes[1]
-    await addMultipleLines(["1. About Me", "2. Projects", "3. Contact", " "])
-    addLine("$ ")
+const action = () => {
+    addMultipleLines(response())
 }
 
+const response = () => {
+    command = getCommand()
+    switch (command) {
+        default:
+            return ["", "", "insert a valid value ", "", "", "$ "]
+    }
+}
+
+const getCommand = () => {
+    res = ''
+    temp = window.main.lastChild
+    while (temp.textContent != '$') {
+        temp = temp.previousSibling
+        res += temp.textContent
+    }
+    res = res.slice(0, res.length - 2)
+    res = res.split('').reverse().join('');
+    return res
+}
+//----------------------------------------------------------------
+
+
+
+
+// functions for terminal simulation -------------------------------
 const addMultipleLines = async (lines) => {
     for (const line of lines) {
-        await addLine(line)
-        window.main.appendChild(document.createElement('br'))
+        if (line == "") {
+            window.main.appendChild(document.createElement('br'))
+        } else {
+            await addLine(line)
+        }
     }
 }
 
@@ -76,12 +110,9 @@ const addCursor = () => {
 const removeCursor = () => {
     window.main.removeChild(window.cursor)
 }
+//----------------------------------------------------------------
 
-
-
-
-
-
+// click listener for change theme
 window.addEventListener('click', () => {
     var r = document.querySelector(':root')
     if (r.style.getPropertyValue('--background-color') == 'white' || r.style.getPropertyValue('--background-color') == '') {
@@ -92,3 +123,4 @@ window.addEventListener('click', () => {
         r.style.setProperty('--foreground-color', 'black');
     }
 })
+//----------------------------------------------------------------
