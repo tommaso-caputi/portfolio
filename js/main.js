@@ -41,6 +41,14 @@ const action = () => {
 const response = () => {
     command = getCommand()
     switch (command) {
+        case "1":
+            break
+        case "2":
+            return ["", "", "https://github.com/tommaso-caputi", "", "", "$ "]
+        case "3":
+            break
+        case "":
+            break
         default:
             return ["", "", "insert a valid value ", "", "", "$ "]
     }
