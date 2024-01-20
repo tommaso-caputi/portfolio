@@ -101,6 +101,7 @@ const addChar = (char) => {
     span.textContent = char
     span.className = window.textSize
     window.main.appendChild(span)
+    span.scrollIntoView()
     addCursor()
 }
 

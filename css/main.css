@@ -20,6 +20,11 @@ body {
     font-size: x-large;
 }
 
+main {
+    max-height: 20em;
+    overflow: auto;
+}
+
 
 /* cursor --------------------------------------------------------*/
 @keyframes alternating-colors {
