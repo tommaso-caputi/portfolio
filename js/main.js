@@ -1,7 +1,7 @@
 const main = document.getElementById('main');
 const cursor = document.getElementById('cursor');
 
-const writeDelay = 0;
+const writeDelay = 20;
 const textSizes = ['x-large-text', 'medium-text'];
 var textSize = textSizes[0]
 
@@ -10,6 +10,7 @@ window.addEventListener('load', () => {
 });
 
 const init = async () => {
+    textSize = textSizes[0]
     await addMultipleLines(["Hi I'm tommaso caputi,", "", "a developer and a student of Politecnico di Bari", "", ""])
     textSize = textSizes[1]
     await addMultipleLines(["1. About Me", "", "2. Projects", "", "3. Contact", "", ""])
@@ -35,22 +36,22 @@ window.addEventListener("keydown", (key) => {
 })
 
 const action = () => {
-    addMultipleLines(response())
-}
-
-const response = () => {
     command = getCommand()
     switch (command) {
         case "1":
             break
         case "2":
-            return ["", "", "https://github.com/tommaso-caputi", "", "", "$ "]
+            addMultipleLines(["", "", "https://github.com/tommaso-caputi", "", "", "$ "])
         case "3":
             break
         case "":
             break
+        case "clear":
+            window.main.innerHTML = '<span id="cursor" class="cursor">&nbsp;</span>';
+            init()
+            break
         default:
-            return ["", "", "insert a valid value ", "", "", "$ "]
+            addMultipleLines(["", "", "insert a valid value ", "", "", "$ "])
     }
 }
 
