@@ -35,3 +35,6 @@ textarea {
     left: -1000px;
     position: absolute;
 }
+pre {
+    margin: 0;
+}
