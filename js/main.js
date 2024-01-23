@@ -6,31 +6,33 @@ var terminal = document.getElementById('terminal');
 var delay = 20;
 
 textarea.oninput = (e) => {
-    key = e.data
+    console.log(e)
+    key = e.data;
+    command = input.textContent.toLowerCase();
     switch (key) {
         case null:
             if (e.inputType === 'insertLineBreak') {//enter
-
+                input.innerHTML = '';
+                action(command)
             } else if (e.inputType === 'deleteContentBackward') {//backspace
-                input.innerHTML = input.innerHTML.substring(0, input.innerHTML.length - 2)
+                input.innerHTML = input.innerHTML.substring(0, input.innerHTML.length - 1);
             }
             break
         default:
-            if (key.length > 1) {
-                key = key[key.length - 1]
+            if (key.length >= input.textContent.length) {
+                key = key[key.length - 1];
             }
             if (/^[a-zA-Z0-9]$/.test(key)) {
-                input.innerHTML += key
+                input.innerHTML += key;
             }
-            break
+            break;
     }
 }
 
 
-
 const addLine = (text, type, time = delay) => {
-    var line = document.createElement(type)
-    terminal.appendChild(line)
+    var line = document.createElement(type);
+    terminal.appendChild(line);
     let i = 0;
     const characters = Array.from(text);
     const interval = () => {
@@ -43,23 +45,32 @@ const addLine = (text, type, time = delay) => {
     interval();
 }
 
+const addMultipleLines = (lines) => {
+    //terminal.innerHTML += '<p>user@tommasocaputi.com:~$</p>';
+    let i = 0;
+    const interval = () => {
+        if (i < lines.length) {
+            addLine(lines[i][1], lines[i][0], lines[i][2]);
+            i++;
+            setTimeout(interval, 200);
+        }
+    };
+    interval();
+}
 
-/* addLine(` 
- ______   ______     __    __     __    __     ______     ______     ______        ______     ______     ______   __  __     ______   __    
-/\\__  _\\ /\\  __ \\   /\\ "-./  \\   /\\ "-./  \\   /\\  __ \\   /\\  ___\\   /\\  __ \\      /\\  ___\\   /\\  __ \\   /\\  == \\ /\\ \\/\\ \\   /\\__  _\\ /\\ \\   
-\\/_/\\ \\/ \\ \\ \\/\\ \\  \\ \\ \\-./\\ \\  \\ \\ \\-./\\ \\  \\ \\  __ \\  \\ \\___  \\  \\ \\ \\/\\ \\     \\ \\ \\____  \\ \\  __ \\  \\ \\ _-/  \\ \\ \\_\\ \\  \\/_/\\ \\/ \\ \\ \\  
-   \\ \\_\\  \\ \\_____\\  \\ \\_\\ \\ \\_\\  \\ \\_\\ \\ \\_\\  \\ \\_\\ \\_\\  \\/\\_____\\  \\ \\_____\\     \\ \\_____\\  \\ \\_\\ \\_\\  \\ \\_\\    \\ \\_____\\    \\ \\_\\  \\ \\_\\ 
-    \\/_/   \\/_____/   \\/_/  \\/_/   \\/_/  \\/_/   \\/_/\\/_/   \\/_____/   \\/_____/      \\/_____/   \\/_/\\/_/   \\/_/     \\/_____/     \\/_/   \\/_/         
-        `, "pre", 0); */
-
-addLine(` ______   ______     __    __     __    __     ______     ______     ______        ______     ______     ______   __  __     ______   __    `, "pre", 15)
-addLine(`/\\__  _\\ /\\  __ \\   /\\ "-./  \\   /\\ "-./  \\   /\\  __ \\   /\\  ___\\   /\\  __ \\      /\\  ___\\   /\\  __ \\   /\\  == \\ /\\ \\/\\ \\   /\\__  _\\ /\\ \\   `, "pre", 18)
-addLine(`\\/_/\\ \\/ \\ \\ \\/\\ \\  \\ \\ \\-./\\ \\  \\ \\ \\-./\\ \\  \\ \\  __ \\  \\ \\___  \\  \\ \\ \\/\\ \\     \\ \\ \\____  \\ \\  __ \\  \\ \\ _-/  \\ \\ \\_\\ \\  \\/_/\\ \\/ \\ \\ \\  `, "pre", 21)
-addLine(`   \\ \\_\\  \\ \\_____\\  \\ \\_\\ \\ \\_\\  \\ \\_\\ \\ \\_\\  \\ \\_\\ \\_\\  \\/\\_____\\  \\ \\_____\\     \\ \\_____\\  \\ \\_\\ \\_\\  \\ \\_\\    \\ \\_____\\    \\ \\_\\  \\ \\_\\ `, "pre", 24)
-addLine(`    \\/_/   \\/_____/   \\/_/  \\/_/   \\/_/  \\/_/   \\/_/\\/_/   \\/_____/   \\/_____/      \\/_____/   \\/_/\\/_/   \\/_/     \\/_____/     \\/_/   \\/_/         `, "pre", 27)
-
-
-//addLine("Hi I'm tommaso caputi, a developer and a student of Politecnico di Bari", "p")
-addLine("For a list of available commands, type 'help'.", "p");
-
+addMultipleLines(init)
 textarea.focus();
+
+
+const action = (command) => {
+    switch (command) {
+        case 'clear':
+            terminal.innerHTML = '';
+            break;
+        case 'help':
+            addMultipleLines(help);
+            break;
+        default:
+            break;
+    }
+}   
