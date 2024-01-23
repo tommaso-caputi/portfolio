@@ -1,30 +1,12 @@
-:root {
-    --foreground-color: black;
-    --background-color: white;
-}
+@import url(theme.css);
 
 body {
     font-family: monospace;
     color: var(--foreground-color);
     background-color: var(--background-color);
-    padding-top: 10%;
-    padding-left: 20%;
-    font-size: x-large;
+    font-size: large;
+    /* padding: 15px 20px; */
 }
-
-.x-large-text {
-    font-size: xx-large;
-}
-
-.medium-text {
-    font-size: x-large;
-}
-
-main {
-    max-height: 20em;
-    overflow: auto;
-}
-
 
 /* cursor --------------------------------------------------------*/
 @keyframes alternating-colors {
@@ -40,7 +22,20 @@ main {
 }
 
 .cursor {
-    animation: alternating-colors 2s steps(1, jump-end) infinite;
+    animation: alternating-colors 1s steps(1, jump-end) infinite;
 }
 
 /*----------------------------------------------------------------*/
+
+#inputcont::before {
+    content: "user@tommasocaputi.com:~$"
+}
+
+textarea {
+    left: -1000px;
+    position: absolute;
+}
+
+p{
+    margin: 0;
+}

@@ -1,0 +1,11 @@
+:root {
+    --background-color: black;
+    --foreground-color: white;
+}
+
+body {
+    color: var(--foreground-color);
+    background-color: var(--background-color);
+    font-family: monospace;
+    font-size: medium;
+}
