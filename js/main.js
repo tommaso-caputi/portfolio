@@ -50,7 +50,7 @@ addLine(`
    \\ \\_\\  \\ \\_____\\  \\ \\_\\ \\ \\_\\  \\ \\_\\ \\ \\_\\  \\ \\_\\ \\_\\  \\/\\_____\\  \\ \\_____\\     \\ \\_____\\  \\ \\_\\ \\_\\  \\ \\_\\    \\ \\_____\\    \\ \\_\\  \\ \\_\\ 
     \\/_/   \\/_____/   \\/_/  \\/_/   \\/_/  \\/_/   \\/_/\\/_/   \\/_____/   \\/_____/      \\/_____/   \\/_/\\/_/   \\/_/     \\/_____/     \\/_/   \\/_/         
         `, "pre", 0);
-addLine("Hi I'm tommaso caputi, a developer and a student of Politecnico di Bari", "p")
+//addLine("Hi I'm tommaso caputi, a developer and a student of Politecnico di Bari", "p")
 addLine("For a list of available commands, type 'help'.", "p");
 
 textarea.focus();
