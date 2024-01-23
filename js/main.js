@@ -45,20 +45,20 @@ const addLine = (text, type, time = delay) => {
     interval();
 }
 
-const addMultipleLines = (lines) => {
+const addMultipleLines = (lines, time) => {
     //terminal.innerHTML += '<p>user@tommasocaputi.com:~$</p>';
     let i = 0;
     const interval = () => {
         if (i < lines.length) {
             addLine(lines[i][1], lines[i][0], lines[i][2]);
             i++;
-            setTimeout(interval, 200);
+            setTimeout(interval, time);
         }
     };
     interval();
 }
 
-addMultipleLines(init)
+addMultipleLines(init, 0)
 textarea.focus();
 
 
@@ -68,7 +68,7 @@ const action = (command) => {
             terminal.innerHTML = '';
             break;
         case 'help':
-            addMultipleLines(help);
+            addMultipleLines(help, 200);
             break;
         default:
             break;
