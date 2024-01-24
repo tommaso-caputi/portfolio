@@ -11,6 +11,7 @@ textarea.oninput = (e) => {
     if (key != null) {
         input.innerHTML = textarea.value;
     } else {
+        input.innerHTML = textarea.value;
         if (e.inputType === 'insertLineBreak') {//enter
             input.innerHTML = '';
             textarea.value = '';
