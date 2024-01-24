@@ -27,28 +27,28 @@ textarea.oninput = (e) => {
             break;
     }
 }
-
-const addLine = (text, type, time = delay) => {
-    var line = document.createElement(type);
-    terminal.appendChild(line);
-    let i = 0;
-    const characters = Array.from(text);
-    const interval = () => {
-        if (i < characters.length) {
-            if (characters[i] == ' ' && type != 'pre') {
-                console.log('a')
-                line.innerHTML += '&nbsp;';
-            } else {
-                line.innerHTML += characters[i];
-            }
+function addLine(text, type, time = delay) {
+    var t = "";
+    for (let i = 0; i < text.length; i++) {
+        if (text.charAt(i) == " " && text.charAt(i + 1) == " ") {
+            t += "&nbsp;&nbsp;";
             i++;
-            setTimeout(interval, time);
+        } else {
+            t += text.charAt(i);
         }
-    };
-    interval();
+    }
+    setTimeout(function () {
+        var next = document.createElement(type);
+        next.innerHTML = t;
+        terminal.appendChild(next)
+        window.scrollTo(0, document.body.scrollHeight);
+    }, time);
 }
 
 const addMultipleLines = (lines, time) => {
+    if (terminal.innerHTML != '') {
+        terminal.innerHTML += '<p>user@tommasocaputi.com:~$ ' + command + '</p>';
+    }
     let i = 0;
     const interval = () => {
         if (i < lines.length) {
@@ -60,18 +60,19 @@ const addMultipleLines = (lines, time) => {
     interval();
 }
 
-
 addMultipleLines(init, 0)
 textarea.focus();
 
 
 const action = (command) => {
     switch (command) {
+        case 'social':
+            addMultipleLines(social, 200);
+            break;
         case 'clear':
-            terminal.innerHTML = '';
+            terminal.innerHTML = ' ';
             break;
         case 'help':
-            terminal.innerHTML += '<p>user@tommasocaputi.com:~$ ' + command + '</p>';
             addMultipleLines(help, 200);
             break;
         default:

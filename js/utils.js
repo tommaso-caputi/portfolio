@@ -8,6 +8,8 @@
 
 help = [
     ['p', 'projects           a list of public dev projects'],
+    ['p', 'clear              clear the terminal'],
+    ['p', 'social             a list of social'],
     ['br', '']
 ];
 
@@ -18,4 +20,8 @@ init = [
     ['pre', `   \\ \\_\\  \\ \\_____\\  \\ \\_\\ \\ \\_\\  \\ \\_\\ \\ \\_\\  \\ \\_\\ \\_\\  \\/\\_____\\  \\ \\_____\\     \\ \\_____\\  \\ \\_\\ \\_\\  \\ \\_\\    \\ \\_____\\    \\ \\_\\  \\ \\_\\ `, 24],
     ['pre', `    \\/_/   \\/_____/   \\/_/  \\/_/   \\/_/  \\/_/   \\/_/\\/_/   \\/_____/   \\/_____/      \\/_____/   \\/_/\\/_/   \\/_/     \\/_____/     \\/_/   \\/_/         `, 27],
     ['p', "For a list of available commands, type 'help'."]
+]
+
+social = [
+    ['p', 'github    <a href="https://github.com/tommaso-caputi">https://github.com/tommaso-caputi<a>']
 ]
