@@ -7,8 +7,7 @@
 */
 
 help = [
-    ['br', ''],
-    ['p', 'projects&nbsp;a list of public dev projects'],
+    ['p', 'projects           a list of public dev projects'],
     ['br', '']
 ];
 

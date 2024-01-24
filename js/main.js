@@ -6,7 +6,6 @@ var terminal = document.getElementById('terminal');
 var delay = 20;
 
 textarea.oninput = (e) => {
-    console.log(e)
     key = e.data;
     command = input.textContent.toLowerCase();
     switch (key) {
@@ -29,6 +28,22 @@ textarea.oninput = (e) => {
     }
 }
 
+const addCleanLine = (line, time = delay) => {
+    let i = 0;
+    const characters = Array.from(line);
+    const interval = () => {
+        if (i < characters.length) {
+            if (characters == ' ') {
+                terminal.innerHTML += "&nbsp;"
+            }
+            terminal.innerHTML += characters[i];
+            i++;
+            setTimeout(interval, time);
+        }
+    };
+    interval();
+}
+
 
 const addLine = (text, type, time = delay) => {
     var line = document.createElement(type);
@@ -37,7 +52,12 @@ const addLine = (text, type, time = delay) => {
     const characters = Array.from(text);
     const interval = () => {
         if (i < characters.length) {
-            line.innerHTML += characters[i];
+            if (characters[i] == ' ' && type != 'pre') {
+                console.log('a')
+                line.innerHTML += '&nbsp;';
+            } else {
+                line.innerHTML += characters[i];
+            }
             i++;
             setTimeout(interval, time);
         }
@@ -46,7 +66,6 @@ const addLine = (text, type, time = delay) => {
 }
 
 const addMultipleLines = (lines, time) => {
-    //terminal.innerHTML += '<p>user@tommasocaputi.com:~$</p>';
     let i = 0;
     const interval = () => {
         if (i < lines.length) {
@@ -58,6 +77,7 @@ const addMultipleLines = (lines, time) => {
     interval();
 }
 
+
 addMultipleLines(init, 0)
 textarea.focus();
 
@@ -68,6 +88,7 @@ const action = (command) => {
             terminal.innerHTML = '';
             break;
         case 'help':
+            terminal.innerHTML += '<p>user@tommasocaputi.com:~$ ' + command + '</p>';
             addMultipleLines(help, 200);
             break;
         default:
