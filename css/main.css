@@ -39,3 +39,8 @@ textarea {
 pre {
     margin: 0px;
 }
+
+a {
+    color: green;
+    text-decoration: none;
+}

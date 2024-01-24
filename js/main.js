@@ -56,7 +56,7 @@ const addMultipleLines = (lines, time) => {
 }
 
 
-addMultipleLines(social)
+addMultipleLines(init)
 textarea.focus();
 
 
