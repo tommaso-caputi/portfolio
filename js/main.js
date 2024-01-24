@@ -28,23 +28,6 @@ textarea.oninput = (e) => {
     }
 }
 
-const addCleanLine = (line, time = delay) => {
-    let i = 0;
-    const characters = Array.from(line);
-    const interval = () => {
-        if (i < characters.length) {
-            if (characters == ' ') {
-                terminal.innerHTML += "&nbsp;"
-            }
-            terminal.innerHTML += characters[i];
-            i++;
-            setTimeout(interval, time);
-        }
-    };
-    interval();
-}
-
-
 const addLine = (text, type, time = delay) => {
     var line = document.createElement(type);
     terminal.appendChild(line);
