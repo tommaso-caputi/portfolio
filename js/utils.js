@@ -24,7 +24,7 @@ init = [
 ]
 
 social = [
-    ['p', 'github                 https://github.com/tommasocaputi'],
+    ['p', 'github                 https://github.com/tommasocaputi', null, 'https://github.com/tommasocaputi'],
     ['br', '']
 ]
 

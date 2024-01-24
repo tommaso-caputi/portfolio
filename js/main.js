@@ -20,7 +20,7 @@ textarea.oninput = (e) => {
     }
 }
 
-const addLine = (text, type, time = delay) => {
+const addLine = (text, type, time = delay, link) => {
     var line = document.createElement(type);
     terminal.appendChild(line);
     let i = 0;
@@ -34,6 +34,10 @@ const addLine = (text, type, time = delay) => {
             }
             i++;
             setTimeout(interval, time);
+        } else {
+            if (link) {
+                line.innerHTML = line.innerHTML.substring(0, line.innerHTML.length - link.length) + '<a href="' + link + '">' + link + '</a>';
+            }
         }
     };
     interval();
@@ -43,7 +47,7 @@ const addMultipleLines = (lines, time) => {
     let i = 0;
     const interval = () => {
         if (i < lines.length) {
-            addLine(lines[i][1], lines[i][0], lines[i][2]);
+            addLine(lines[i][1], lines[i][0], lines[i][2] |= delay, lines[i][3]);
             i++;
             setTimeout(interval, time);
         }
@@ -52,7 +56,7 @@ const addMultipleLines = (lines, time) => {
 }
 
 
-addMultipleLines(init)
+addMultipleLines(social)
 textarea.focus();
 
 
