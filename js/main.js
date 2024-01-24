@@ -7,7 +7,7 @@ var delay = 20;
 
 textarea.oninput = (e) => {
     key = e.data;
-    command = input.textContent.toLowerCase();
+    command = input.textContent.toLowerCase().replace(/\s/g, '');
     if (key != null) {
         input.innerHTML = textarea.value;
     } else {
