@@ -8,7 +8,6 @@ var delay = 20;
 textarea.oninput = (e) => {
     key = e.data;
     command = input.textContent.toLowerCase();
-    console.log(key, input.innerHTML,)
     if (key != null) {
         input.innerHTML = textarea.value;
     } else {
