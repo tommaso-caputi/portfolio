@@ -8,23 +8,15 @@ var delay = 20;
 textarea.oninput = (e) => {
     key = e.data;
     command = input.textContent.toLowerCase();
-    switch (key) {
-        case null:
-            if (e.inputType === 'insertLineBreak') {//enter
-                input.innerHTML = '';
-                action(command)
-            } else if (e.inputType === 'deleteContentBackward') {//backspace
-                input.innerHTML = input.innerHTML.substring(0, input.innerHTML.length - 1);
-            }
-            break
-        default:
-            if (key.length >= input.textContent.length) {
-                key = key[key.length - 1];
-            }
-            if (/^[a-zA-Z0-9]$/.test(key)) {
-                input.innerHTML += key;
-            }
-            break;
+    console.log(key, input.innerHTML,)
+    if (key != null) {
+        input.innerHTML = textarea.value;
+    } else {
+        if (e.inputType === 'insertLineBreak') {//enter
+            input.innerHTML = '';
+            textarea.value = '';
+            action(command)
+        }
     }
 }
 
