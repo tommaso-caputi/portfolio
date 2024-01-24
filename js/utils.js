@@ -7,9 +7,10 @@
 */
 
 help = [
-    ['p', 'projects           a list of public dev projects'],
+    ['p', 'projects           list of public dev projects'],
+    ['p', 'social             link to social'],
+    ['p', 'banner             show the header'],
     ['p', 'clear              clear the terminal'],
-    ['p', 'social             a list of social'],
     ['br', '']
 ];
 
@@ -23,5 +24,14 @@ init = [
 ]
 
 social = [
-    ['p', 'github    <a href="https://github.com/tommaso-caputi">https://github.com/tommaso-caputi<a>']
+    ['p', 'github                 https://github.com/tommasocaputi'],
+    ['br', '']
+]
+
+error = [
+    ['p', "Insert a valid command, use 'help' for a list of available commands"]
+]
+
+projects = [
+    ['p', 'Work in progress']
 ]
