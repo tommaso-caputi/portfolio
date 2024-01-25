@@ -29,8 +29,11 @@ social = [
     ['br', '']
 ]
 
-error = [
+error1 = [
     ['p', "Insert a valid command, use 'help' for a list of available commands"]
+]
+error2 = [
+    ['p', "Insert a valid theme, use 'theme' for a list of available themes"]
 ]
 
 projects = [

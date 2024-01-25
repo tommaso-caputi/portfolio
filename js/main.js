@@ -83,13 +83,18 @@ const action = (command) => {
             addMultipleLines(help, 200);
             break;
         default:
-            if (command.substring(0, 5) == 'theme') {
-                let color = command.substring(6, command.length)
-                document.documentElement.style.setProperty('--background-color', '' + themes[color][0] + '');
-                document.documentElement.style.setProperty('--foreground-color', '' + themes[color][1] + '');
-                document.documentElement.style.setProperty('--liner-color', '' + themes[color][2] + '');
+            if (command.substring(0, 5) == 'theme' && command[5] == ' ') {
+                command = command.replace(/\s/g, '');
+                let color = command.substring(5, command.length)
+                if (themes[color]) {
+                    document.documentElement.style.setProperty('--background-color', '' + themes[color][0] + '');
+                    document.documentElement.style.setProperty('--foreground-color', '' + themes[color][1] + '');
+                    document.documentElement.style.setProperty('--liner-color', '' + themes[color][2] + '');
+                } else {
+                    addMultipleLines(error2, 200);
+                }
             } else {
-                addMultipleLines(error, 200);
+                addMultipleLines(error1, 200);
             }
             break;
     }
