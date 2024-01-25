@@ -42,7 +42,7 @@ projects = [
 
 
 color = [
-    ['p', 'classic, everforest, everforest-dark, fairy, fairy-dark, elio, lunaria, lunaria-dark'],
+    ['p', 'classic, everforest, everforest-dark, fairy, fairy-dark, elio, lunaria, lunaria-dark, atom, aura, maia, nord']
 ]
 themes = {
     'everforest': ['rgb(253, 246, 227)', '#5C6A72', '#F85552'],
@@ -52,5 +52,9 @@ themes = {
     'elio': ['rgb(4, 26, 59)', '#F2F2F2', '#6AB017'],
     'lunaria-dark': ['rgb(54, 70, 78)', '#CACED8', '#809984'],
     'lunaria': ['rgb(235, 228, 225)', '#3F3566', '#497D46'],
-    'classic': ['rgb(247, 247, 247)', '#090300', '#ee6c4d']
+    'classic': ['rgb(247, 247, 247)', '#090300', '#ee6c4d'],
+    'atom': ['rgb(22, 23, 25)', '#E0E0E0', '#FD5FF1'],
+    'aura': ['rgb(21, 20, 27)', '#EDECEE', '#FFCA85'],
+    'maia': ['rgb(49, 54, 59)', '#E0E0E0', '#BA2922'],
+    'nord': ['rgb(235, 234, 242)', '#003B4E', '#069F5F']
 }
