@@ -21,7 +21,6 @@ textarea.onkeydown = (e) => {
         input.innerHTML = command_history[ind];
         textarea.value = command_history[ind];
     }
-    console.log(ind, command_history)
     textarea.setSelectionRange(textarea.value.length, textarea.value.length);
 }
 
