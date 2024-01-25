@@ -4,7 +4,7 @@ var cursor = document.getElementById('cursor');
 var terminal = document.getElementById('terminal');
 
 var delay = 20;
-var command_history = [''];
+var command_history = ['', ''];
 var ind = 0;
 
 textarea.onkeydown = (e) => {
@@ -112,7 +112,9 @@ const action = (command) => {
                     addMultipleLines(error2, 200);
                 }
             } else {
-                addMultipleLines(error1, 200);
+                if(command !=''){
+                    addMultipleLines(error1, 200);
+                }
             }
             break;
     }
