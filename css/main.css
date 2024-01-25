@@ -42,6 +42,6 @@ pre {
 }
 
 a {
-    color: green;
+    color: var(--liner-color);
     text-decoration: none;
 }
