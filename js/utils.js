@@ -9,7 +9,7 @@
 help = [
     ['p', 'projects           list of public dev projects'],
     ['p', 'social             link to social'],
-    ['p', "theme [color]      change the terminal theme color, 'use theme' for view all available colors"],
+    ['p', "theme [color]      change the terminal theme color, use 'theme' for view all available colors"],
     ['p', 'banner             show the header'],
     ['p', 'clear              clear the terminal'],
     ['br', '']
