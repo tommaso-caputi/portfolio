@@ -1,17 +1,7 @@
 :root {
-    --background-color: #211D1B;
-    --foreground-color: var(--white);
-    --liner-color: var(--emerald);
-
-    --white: white;
-    --cyan: #23b5d3;
-    --vista-blue: #8d9ec6;
-    --spring-green: #37ff8b;
-    --crayola: #ef476f;
-    --emerald: #06d6a0;
-    --sienna: #ee6c4d;
-
-    
+    --background-color: rgb(247, 247, 247);
+    --foreground-color: #090300;
+    --liner-color: #ee6c4d;
 }
 
 

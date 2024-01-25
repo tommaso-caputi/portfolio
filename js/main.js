@@ -4,10 +4,30 @@ var cursor = document.getElementById('cursor');
 var terminal = document.getElementById('terminal');
 
 var delay = 20;
+var command_history = [''];
+var ind = 0;
+
+textarea.onkeydown = (e) => {
+    if (e.key == 'ArrowUp') {
+        if (ind > 1) {
+            ind--;
+        }
+        input.innerHTML = command_history[ind];
+        textarea.value = command_history[ind];
+    } else if (e.key == 'ArrowDown') {
+        if (ind < command_history.length - 1) {
+            ind++;
+        }
+        input.innerHTML = command_history[ind];
+        textarea.value = command_history[ind];
+    }
+    console.log(ind, command_history)
+    textarea.setSelectionRange(textarea.value.length, textarea.value.length);
+}
 
 textarea.oninput = (e) => {
     key = e.data;
-    command = input.textContent.toLowerCase()/* .replace(/\s/g, '') */;
+    command = input.textContent.toLowerCase();
     if (key != null) {
         input.innerHTML = textarea.value;
     } else {
@@ -57,11 +77,10 @@ const addMultipleLines = (lines, time = delay) => {
 }
 
 
-addMultipleLines(init)
-textarea.focus();
-
 
 const action = (command) => {
+    command_history.push(command);
+    ind = command_history.length;
     terminal.innerHTML += ' <div id="inputcont"> ' + command + '</div>';
     switch (command) {
         case 'theme':
@@ -98,4 +117,8 @@ const action = (command) => {
             }
             break;
     }
-}   
+}
+
+
+addMultipleLines(init)
+textarea.focus()

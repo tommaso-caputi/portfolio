@@ -42,10 +42,15 @@ projects = [
 
 
 color = [
-    ['p', 'everforest, fairy, elio'],
+    ['p', 'classic, everforest, everforest-dark, fairy, fairy-dark, elio, lunaria, lunaria-dark'],
 ]
 themes = {
     'everforest': ['rgb(253, 246, 227)', '#5C6A72', '#F85552'],
+    'everforest-dark': ['rgb(45, 53, 59)', '#D3C6AA', '#A7C080'],
     'fairy': ['rgb(90, 84, 117)', '#C2FFDF', '#FF857F'],
-    'elio': ['rgb(4, 26, 59)', '#F2F2F2', '#6AB017']
+    'fairy-dark': ['rgb(66, 57, 93)', '#C2FFDF', '#FF857F'],
+    'elio': ['rgb(4, 26, 59)', '#F2F2F2', '#6AB017'],
+    'lunaria-dark': ['rgb(54, 70, 78)', '#CACED8', '#809984'],
+    'lunaria': ['rgb(235, 228, 225)', '#3F3566', '#497D46'],
+    'classic': ['rgb(247, 247, 247)', '#090300', '#ee6c4d']
 }
