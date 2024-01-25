@@ -28,7 +28,8 @@ body {
 /*----------------------------------------------------------------*/
 
 #inputcont::before {
-    content: "user@tommasocaputi.com:~$"
+    content: "user@tommasocaputi.com:~$";
+    color: var(--liner-color);
 }
 
 textarea {

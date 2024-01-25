@@ -7,7 +7,7 @@ var delay = 20;
 
 textarea.oninput = (e) => {
     key = e.data;
-    command = input.textContent.toLowerCase().replace(/\s/g, '');
+    command = input.textContent.toLowerCase()/* .replace(/\s/g, '') */;
     if (key != null) {
         input.innerHTML = textarea.value;
     } else {
@@ -20,8 +20,9 @@ textarea.oninput = (e) => {
     }
 }
 
-const addLine = (text, type, time = delay, link) => {
+const addLine = (text, type, time = delay, link, color) => {
     var line = document.createElement(type);
+    line.style.color = color
     terminal.appendChild(line);
     let i = 0;
     const characters = Array.from(text);
@@ -43,11 +44,11 @@ const addLine = (text, type, time = delay, link) => {
     interval();
 }
 
-const addMultipleLines = (lines, time) => {
+const addMultipleLines = (lines, time = delay) => {
     let i = 0;
     const interval = () => {
         if (i < lines.length) {
-            addLine(lines[i][1], lines[i][0], lines[i][2] |= delay, lines[i][3]);
+            addLine(lines[i][1], lines[i][0], lines[i][2], lines[i][3], lines[i][4]);
             i++;
             setTimeout(interval, time);
         }
@@ -61,8 +62,11 @@ textarea.focus();
 
 
 const action = (command) => {
-    terminal.innerHTML += '<p>user@tommasocaputi.com:~$ ' + command + '</p>';
+    terminal.innerHTML += ' <div id="inputcont"> ' + command + '</div>';
     switch (command) {
+        case 'theme':
+            addMultipleLines(color, 200);
+            break;
         case 'clear':
             terminal.innerHTML = '';
             break;
@@ -79,7 +83,14 @@ const action = (command) => {
             addMultipleLines(help, 200);
             break;
         default:
-            addMultipleLines(error, 200);
+            if (command.substring(0, 5) == 'theme') {
+                let color = command.substring(6, command.length)
+                document.documentElement.style.setProperty('--background-color', '' + themes[color][0] + '');
+                document.documentElement.style.setProperty('--foreground-color', '' + themes[color][1] + '');
+                document.documentElement.style.setProperty('--liner-color', '' + themes[color][2] + '');
+            } else {
+                addMultipleLines(error, 200);
+            }
             break;
     }
 }   
