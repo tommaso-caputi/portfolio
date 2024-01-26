@@ -38,12 +38,12 @@ error2 = [
 ]
 
 projects = [
-    ['p', 'Work in progress']
+    ['p', 'Work in progress, some projects are on github']
 ]
 
 
 color = [
-    ['p', 'classic, everforest, everforest-dark, fairy, fairy-dark, elio, lunaria, lunaria-dark, atom, aura, maia, nord']
+    ['p', 'classic, atom, aura, maia, nord, fairy, fairy-dark, everforest, everforest-dark, elio, lunaria, lunaria-dark']
 ]
 themes = {
     'everforest': ['rgb(253, 246, 227)', '#5C6A72', '#F85552'],
