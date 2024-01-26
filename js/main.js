@@ -82,6 +82,9 @@ const action = (command) => {
     ind = command_history.length;
     terminal.innerHTML += ' <div id="inputcont"> ' + command + '</div>';
     switch (command) {
+        case 'email':
+            window.open('mailto:tommasocaputi85@gmail.com', '_blank')
+            break;
         case 'theme':
             addMultipleLines(color, 200);
             break;
@@ -112,7 +115,7 @@ const action = (command) => {
                     addMultipleLines(error2, 200);
                 }
             } else {
-                if(command !=''){
+                if (command != '') {
                     addMultipleLines(error1, 200);
                 }
             }
