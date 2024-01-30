@@ -3,11 +3,3 @@
     --foreground-color: #090300;
     --liner-color: #e84747;
 }
-
-
-body {
-    color: var(--foreground-color);
-    background-color: var(--background-color);
-    font-family: monospace;
-    font-size: medium;
-}
