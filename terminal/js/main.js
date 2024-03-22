@@ -91,6 +91,9 @@ const action = (command) => {
         case 'clear':
             terminal.innerHTML = '';
             break;
+        case 'exit':
+            history.back()
+            break;
         case 'social':
             addMultipleLines(social, 200);
             break

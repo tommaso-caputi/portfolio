@@ -13,6 +13,7 @@ help = [
     ['p', "theme [color]      change the terminal theme color, use 'theme' for view all available colors"],
     ['p', 'banner             show the header'],
     ['p', 'clear              clear the terminal'],
+    ['p', 'exit               get back to the home'],
     ['br', '']
 ];
 
