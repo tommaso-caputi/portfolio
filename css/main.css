@@ -1,49 +1,65 @@
-@import url(theme.css);
+:root {
+    --selected-color: #2596be;
+}
+
+header {
+    font-size: large;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 1%;
+}
 
 body {
-    font-family: monospace;
-    /* font-family: "Francois One", arial, helvetica, sans-serif; */
-    /* font-family: "Ubuntu", arial, helvetica, sans-serif; */
-    color: var(--foreground-color);
-    background-color: var(--background-color);
-    font-size: large;
-    padding-left: 10px;
+    font-size: 25px;
+    font-family: 'Trebuchet MS', sans-serif;
 }
 
-/* cursor --------------------------------------------------------*/
-@keyframes alternating-colors {
-    0% {
-        color: var(--background-color);
-        background-color: var(--foreground-color);
-    }
-
-    50% {
-        color: var(--foreground-color);
-        background-color: var(--background-color);
-    }
+.headerButtons {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
 }
 
-.cursor {
-    animation: alternating-colors 1s steps(1, jump-end) infinite;
+.headerButton {
+    margin-left: 30%;
 }
 
-/*----------------------------------------------------------------*/
-
-#inputcont::before {
-    content: "user@tommasocaputi.com:~$";
-    color: var(--liner-color);
+main {
+    margin-top: 10%;
+    display: flex;
+    padding: 3%;
+    justify-content: space-between;
 }
 
-textarea {
-    left: -1000px;
-    position: absolute;
+.large-text {
+    font-size: 90px;
+    padding-bottom: 2.2%;
+    font-weight: bold;
 }
 
-pre {
-    margin: 0px;
+.img {
+    height: 400px;
+    width: 400px;
+    margin-right: 3%;
+}
+
+
+a:active {
+    text-decoration: underline;
+    color: var(--selected-color);
 }
 
 a {
-    color: var(--liner-color);
+    color: black;
     text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.active {
+    color: var(--selected-color);
 }

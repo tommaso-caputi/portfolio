@@ -1,23 +1,51 @@
 <!DOCTYPE html>
-<html onclick="document.getElementById('textinput').focus()">
+<html lang="en">
 
 <head>
-    <title>tommaso caputi</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="assets/terminal_icon.ico">
+    <title>tommaso caputi</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 
 <body>
-    <div id="terminal"></div>
-    <div id="command">
-        <textarea type="text" id="textinput" autofocus></textarea>
-        <div id="inputcont">
-            <span id="input"></span><span id="cursor" class="cursor">&nbsp;</span>
+
+    <header>
+        <div>tommaso caputi</div>
+        <div class="headerButtons">
+            <a id="home-link" href="index.html" class="headerButton">Home</a>
+            <a href="https://github.com/tommaso-caputi" class="headerButton">Projects</a>
+            <a id="about-link" href="about.html" class="headerButton">About</a>
         </div>
-    </div>
-    <script src="js/utils.js"></script>
-    <script src="js/main.js"></script>
+        <div>
+            <a href="terminal/index.html"><i style="font-size:24px" class="fa">&#xf120;</i></a>
+        </div>
+    </header>
+
+    <main>
+        <div>
+            Hi, I'm Tommaso 👋
+            <div class="large-text">
+                <div style="color: var(--selected-color);">Software<br>Engineer</div>
+            </div>
+            <div style="opacity: 0.5; margin-bottom: 2%;">I'm a software engineer student at Politecnico di Bari,bla
+                bla<br>
+                bla bla bla bla</div>
+            <button>Get In Touch</button>
+            <button>Browse Projects</button>
+        </div>
+
+
+
+        <img hidden="true"
+            src='https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairShortCurly&accessoriesType=Prescription02&hairColor=BrownDark&facialHairType=Blank&clotheType=Hoodie&clotheColor=Black&eyeType=Happy&eyebrowType=Default&mouthType=Twinkle&skinColor=Light' />
+        <img class="img"
+            src='https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShortCurly&accessoriesType=Prescription02&hairColor=BrownDark&facialHairType=Blank&clotheType=Hoodie&clotheColor=Black&eyeType=Happy&eyebrowType=Default&mouthType=Twinkle&skinColor=Light' />
+    </main>
+
+    <script type="text/javascript" src="js/main.js"></script>
 </body>
 
 </html>

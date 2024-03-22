@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html onclick="document.getElementById('textinput').focus()">
+
+<head>
+    <title>tommaso caputi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="assets/terminal_icon.ico">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div id="terminal"></div>
+    <div id="command">
+        <textarea type="text" id="textinput" autofocus></textarea>
+        <div id="inputcont">
+            <span id="input"></span><span id="cursor" class="cursor">&nbsp;</span>
+        </div>
+    </div>
+    <script src="js/utils.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
