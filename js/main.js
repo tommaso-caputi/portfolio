@@ -1,136 +1,23 @@
-const main = document.getElementById('main');
-const cursor = document.getElementById('cursor');
+document.addEventListener("DOMContentLoaded", function () {
+    var currentLocation = window.location.href;
+    var homeLink = document.getElementById("home-link");
+    var aboutLink = document.getElementById("about-link");
 
-const writeDelay = 20;
-const textSizes = ['x-large-text', 'medium-text'];
-var textSize = textSizes[0]
-
-window.addEventListener('load', () => {
-    init()
+    if (currentLocation.includes("index.html")) {
+        homeLink.classList.add("active");
+    } else if (currentLocation.includes("about.html")) {
+        aboutLink.classList.add("active");
+    }
 });
 
-const init = async () => {
-    textSize = textSizes[0]
-    await addMultipleLines(["Hi I'm tommaso caputi,", "", "a developer and a student of Politecnico di Bari", "", ""])
-    textSize = textSizes[1]
-    await addMultipleLines(["1. About Me", "", "2. Projects", "", "3. Contact", "", ""])
-    addLine("$ ")
+
+const opencv = () => {
+    window.open("https://drive.google.com/file/d/1y6_BxV_v1OdBd8CiKRqi5Pvk4vRW_BX9/view?usp=sharing");
 }
 
-
-// function for handle user input ---------------------------------
-window.addEventListener("keydown", (key) => {
-    switch (key.key) {
-        case "Backspace":
-            removeChar()
-            break;
-        case "Enter":
-            action();
-            break;
-        default:
-            if (/^[a-zA-Z0-9]$/.test(key.key)) {
-                addChar(key.key);
-            }
-            break
-    }
-})
-
-const action = () => {
-    command = getCommand()
-    switch (command) {
-        case "1":
-            break
-        case "2":
-            addMultipleLines(["", "", "https://github.com/tommaso-caputi", "", "", "$ "])
-        case "3":
-            break
-        case "":
-            break
-        case "clear":
-            window.main.innerHTML = '<span id="cursor" class="cursor">&nbsp;</span>';
-            init()
-            break
-        default:
-            addMultipleLines(["", "", "insert a valid value ", "", "", "$ "])
-    }
+const openemail = () => {
+    var email = 'tommasocaputi85@gmail.com';
+    var subject = '';
+    var emailBody = '';
+    window.open("mailto:" + email + "?subject=" + subject + "&body=" + emailBody);
 }
-
-const getCommand = () => {
-    res = ''
-    temp = window.main.lastChild
-    while (temp.textContent != '$') {
-        temp = temp.previousSibling
-        res += temp.textContent
-    }
-    res = res.slice(0, res.length - 2)
-    res = res.split('').reverse().join('');
-    return res
-}
-//----------------------------------------------------------------
-
-
-
-
-// functions for terminal simulation -------------------------------
-const addMultipleLines = async (lines) => {
-    for (const line of lines) {
-        if (line == "") {
-            window.main.appendChild(document.createElement('br'))
-        } else {
-            await addLine(line)
-        }
-    }
-}
-
-const addLine = (line) => {
-    return new Promise((resolve) => {
-        i = 0
-        const interval = setInterval(() => {
-            addChar(line[i++])
-            if (line.length == i) {
-                clearInterval(interval)
-                resolve()
-            }
-        }, writeDelay);
-    })
-}
-
-const removeChar = () => {
-    const lastChild = window.main.lastChild;
-    if (lastChild) {
-        const prevSibling = lastChild.previousSibling;
-        if (prevSibling && prevSibling.previousSibling.textContent != '$') {
-            window.main.removeChild(prevSibling);
-        }
-    }
-}
-
-const addChar = (char) => {
-    const span = document.createElement('span')
-    span.textContent = char
-    span.className = window.textSize
-    window.main.appendChild(span)
-    span.scrollIntoView()
-    addCursor()
-}
-
-const addCursor = () => {
-    window.main.appendChild(window.cursor)
-}
-const removeCursor = () => {
-    window.main.removeChild(window.cursor)
-}
-//----------------------------------------------------------------
-
-// click listener for change theme
-window.addEventListener('click', () => {
-    var r = document.querySelector(':root')
-    if (r.style.getPropertyValue('--background-color') == 'white' || r.style.getPropertyValue('--background-color') == '') {
-        r.style.setProperty('--background-color', 'black');
-        r.style.setProperty('--foreground-color', 'white');
-    } else {
-        r.style.setProperty('--background-color', 'white');
-        r.style.setProperty('--foreground-color', 'black');
-    }
-})
-//----------------------------------------------------------------
