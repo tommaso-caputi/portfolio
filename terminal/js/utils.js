@@ -14,7 +14,7 @@ help = [
     ['p', 'banner             show the header'],
     ['p', 'clear              clear the terminal'],
     ['p', 'exit               get back to the home'],
-    ['br', '']
+    //['br', '']
 ];
 
 init = [
@@ -28,7 +28,8 @@ init = [
 
 social = [
     ['p', 'github                 https://github.com/tommaso-caputi', null, 'https://github.com/tommaso-caputi'],
-    ['br', '']
+    ['p', 'linkedin               https://www.linkedin.com/in/tommaso-caputi/', null, 'https://www.linkedin.com/in/tommaso-caputi/'],
+    //['br', '']
 ]
 
 error1 = [
