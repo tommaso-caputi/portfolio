@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var homeLink = document.getElementById("home-link");
     var aboutLink = document.getElementById("about-link");
 
-    if (currentLocation.includes("index.html")) {
+    if (currentLocation.includes("index.html") || currentLocation.includes("")) {
         homeLink.classList.add("active");
     } else if (currentLocation.includes("about.html")) {
         aboutLink.classList.add("active");
