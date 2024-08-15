@@ -92,7 +92,7 @@ const action = (command) => {
             terminal.innerHTML = '';
             break;
         case 'exit':
-            history.back()
+            window.open('') //need to set protfolio website url
             break;
         case 'social':
             addMultipleLines(social, 200);
