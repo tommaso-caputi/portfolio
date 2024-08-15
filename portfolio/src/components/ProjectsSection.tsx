@@ -13,27 +13,25 @@ export default function ProjectsSection() {
                     </div>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <ProjectCard />
+                    {projects.map(project => (
+                        <div className="bg-card p-6 rounded-lg shadow-md">
+                            <h3 className="text-xl font-bold">{project.name}</h3>
+                            <p className="text-muted-foreground pt-1">{project.descr}</p>
+                            <div className="mt-4 flex gap-2">
+                                <Link
+                                    href={project.url}
+                                    className="inline-flex h-9 items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+                                    prefetch={false}
+                                >
+                                    Github
+                                </Link>
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </div>
         </section>
     )
 }
 
-function ProjectCard() {
-    return (
-        <div className="bg-card p-6 rounded-lg shadow-md">
-            <h3 className="text-xl font-bold">Project 1</h3>
-            <p className="text-muted-foreground">A web application built with React and Node.js.</p>
-            <div className="mt-4 flex gap-2">
-                <Link
-                    href="#"
-                    className="inline-flex h-9 items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
-                    prefetch={false}
-                >
-                    Github
-                </Link>
-            </div>
-        </div>
-    )
-}
+const projects = [{ name: "Crypto Keeper", descr: "A bitcoin wallet with nfc transactions", url: "https://github.com/tommaso-caputi/CryptoKeeper" }]
