@@ -1,10 +1,12 @@
 import Link from "next/link";
+import { FaTerminal } from "react-icons/fa";
+
 
 export default function Header() {
     return (
-        <header className="px-4 lg:px-6 h-14 flex items-center">
+        <header className="px-8 lg:px-6 h-14 flex items-center">
             <Link href="#" className="flex items-center justify-center" prefetch={false}>
-                {/* <CodeIcon className="size-6" /> */}
+                <FaTerminal className="size-6" />
                 <span className="sr-only">Tommaso Caputi's portfolio</span>
             </Link>
             <nav className="ml-auto flex gap-4 sm:gap-6">
