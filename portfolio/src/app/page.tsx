@@ -1,4 +1,7 @@
+import AboutSection from "@/components/AboutSection";
+import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import ProjectsSection from "@/components/ProjectsSection";
 
 
 export default function Home() {
@@ -15,8 +18,8 @@ export default function Home() {
                 </h1>
                 <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl">Software Developer</h2>
                 <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
-                  I'm a passionate software developer with expertise in building modern, scalable, and user-friendly web
-                  applications.
+                  I'm a passionate software engeneering student at Politecnico di Bari
+                  with expertise in building modern, scalable, and user-friendly web applications.
                 </p>
               </div>
               <div className="justify-center flex">
@@ -32,7 +35,10 @@ export default function Home() {
             </div>
           </div>
         </section>
+        <AboutSection />
+        <ProjectsSection />
       </main>
+      <Footer />
     </div>
   );
 }

@@ -10,13 +10,13 @@ export default function Header() {
                 <span className="sr-only">Tommaso Caputi's portfolio</span>
             </Link>
             <nav className="ml-auto flex gap-4 sm:gap-6">
-                <Link href="#" className="text-sm font-medium hover:underline underline-offset-4" prefetch={false}>
+                {/* <Link href="#" className="text-sm font-medium hover:underline underline-offset-4" prefetch={false}>
                     About
-                </Link>
-                <Link href="#" className="text-sm font-medium hover:underline underline-offset-4" prefetch={false}>
+                </Link> */}
+                <Link href="#projects" className="text-sm font-medium hover:underline underline-offset-4" prefetch={false}>
                     Projects
                 </Link>
-                <Link href="#" className="text-sm font-medium hover:underline underline-offset-4" prefetch={false}>
+                <Link href="mailto:tommasocaputi85@gmail.com" className="text-sm font-medium hover:underline underline-offset-4" prefetch={false}>
                     Contact
                 </Link>
             </nav>
