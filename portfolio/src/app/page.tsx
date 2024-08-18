@@ -18,7 +18,8 @@ export default function Home() {
                 </h1>
                 <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl">Software Developer</h2>
                 <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
-                  I am a software engineering student at the Politecnico di Bari, specializing in web and mobile development. I build responsive websites and Progressive Web Apps using React, Next.js and Tailwind and develop cross-platform mobile apps with Capacitor and Ionic. I also have experience in creating robust APIs for seamless system integration. I am dedicated to learning and applying new technologies to deliver impactful solutions.
+                  I&apos;m a passionate software engeneering student at Politecnico di Bari
+                  with expertise in building modern, scalable, and user-friendly web apps.
                 </p>
               </div>
               <div className="justify-center flex">
@@ -34,7 +35,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        {/* <AboutSection /> */}
+        <AboutSection />
         <ProjectsSection />
       </main>
       <Footer />
