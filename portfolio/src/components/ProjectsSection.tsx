@@ -47,5 +47,7 @@ export default function ProjectsSection() {
 
 const projects = [
     { name: "Crypto Keeper", descr: "A bitcoin wallet with NFC transactions", giturl: "https://github.com/tommaso-caputi/CryptoKeeper", url: "" },
-    { name: "Masseria Coppa Website", descr: "A website for a local farm", giturl: "https://github.com/tommaso-caputi/Masseria-Coppa-website", url: "https://masseria-coppa.vercel.app" }
+    { name: "Masseria Coppa Website", descr: "A website for a local farm", giturl: "https://github.com/tommaso-caputi/Masseria-Coppa-website", url: "https://masseria-coppa.vercel.app" },
+    { name: "Dear Diary", descr: "A journal app", giturl: "https://github.com/tommaso-caputi/Dear-Diary" },
+    { name: "Telegram trading bot", descr: "pythob telegram bot controlled by telegram", giturl: "https://github.com/tommaso-caputi/telegram-trading-bot" }
 ];
