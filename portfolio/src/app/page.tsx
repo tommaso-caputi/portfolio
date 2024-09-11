@@ -1,44 +1,17 @@
-import AboutSection from "@/components/AboutSection";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
+import ExperienceSection from "@/components/ExperienceSection";
+import FirstSection from "../components/FirstSection"
 import ProjectsSection from "@/components/ProjectsSection";
-import Image from "next/image";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-dvh">
-      <Header />
-      <main className="flex-1">
-        <section className="w-full pt-10 pb-10 border-b">
-          <div className="md:px-6 space-y-10 xl:space-y-16">
-            <div className="grid max-w-[1300px] mx-auto gap-4 px-4 sm:px-6 md:px-10 md:grid-cols-2 md:gap-16">
-              <div className="flex justify-center flex-col">
-                <h1 className="lg:leading-tighter text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl xl:text-[3.4rem] 2xl:text-[3.75rem]">
-                  Tommaso Caputi
-                </h1>
-                <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl">Software Developer</h2>
-                <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
-                  I&apos;m a passionate software engeneering student at Politecnico di Bari
-                  with expertise in building modern, scalable, and user-friendly web apps.
-                </p>
-              </div>
-              <div className="justify-center flex">
-                <Image
-                  src="/avatar-circle.png"
-                  width="300"
-                  height="300"
-                  alt="John Doe"
-                  className="rounded-full"
-                  style={{ aspectRatio: "300/300", objectFit: "cover" }}
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-        <AboutSection />
+    <div className="flex justify-center min-h-screen py-7">
+      <div className="space-y-28 pt-8 text-left px-3 md:w-7/12 sm:w-full">
+        <FirstSection />
         <ProjectsSection />
-      </main>
-      <Footer />
+        <ExperienceSection />
+        <Footer />
+      </div>
     </div>
   );
 }

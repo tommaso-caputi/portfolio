@@ -1,20 +1,21 @@
-import Link from "next/link";
-import { FaGithub } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
-
-
 export default function Footer() {
     return (
-        <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
-            <p className="text-xs text-muted-foreground">Tommaso Caputi</p>
-            <nav className="sm:ml-auto flex gap-4 sm:gap-6">
-                <Link href="https://github.com/tommaso-caputi" className="text-xs hover:underline underline-offset-4" prefetch={false}>
-                    <FaGithub className="size-5" />
-                </Link>
-                <Link href="https://www.linkedin.com/in/tommaso-caputi" className="text-xs hover:underline underline-offset-4" prefetch={false}>
-                    <FaLinkedin className="size-5" />
-                </Link>
-            </nav>
+        <footer>
+            <p className="font-medium text-lg pb-6">Experience</p>
+            <div className="flex flex-row space-x-4">
+                <a href="mailto:tommasocaputi85@gmail.com" className="flex flex-row">
+                    <p className="underline underline-offset-4 font-medium ">Email</p>&#8599;
+                </a>
+                <a href="https://github.com/tommaso-caputi" target="_blank" rel="noopener noreferrer" className="flex flex-row">
+                    <p className="underline underline-offset-4 font-medium ">Github</p>&#8599;
+                </a>
+                <a href="https://www.linkedin.com/in/tommaso-caputi" target="_blank" rel="noopener noreferrer" className="flex flex-row">
+                    <p className="underline underline-offset-4 font-medium ">LinkedIn</p>&#8599;
+                </a>
+                <a href="" target="_blank" rel="noopener noreferrer" className="flex flex-row">
+                    <p className="underline underline-offset-4 font-medium ">Resume</p>&#8599;
+                </a>
+            </div>
         </footer>
-    )
-}   
+    );
+}
