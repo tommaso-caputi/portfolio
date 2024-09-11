@@ -1,7 +1,7 @@
 export default function ExperienceSection() {
     return (
-        <div className="grid gap-y-9">
-            <p className="font-medium text-lg">Experience</p>
+        <div className="grid gap-y-0">
+            <p className="font-medium text-lg pb-9">Experience</p>
             <Experience />
             <Experience />
         </div>
@@ -14,7 +14,6 @@ function Experience() {
             <div className="connector mr-4">
                 <div className="point"></div>
                 <div className="line"></div>
-                <div className="point"></div>
             </div>
             <div className="py-8">
                 <p className="text-xs text-slate-300 pb-2" style={{ color: '#00000060' }}>2019 - present</p>
