@@ -19,7 +19,7 @@ function Experience() {
                 <p className="text-xs text-slate-300 pb-2" style={{ color: '#00000060' }}>2019 - present</p>
                 <div className="flex h-fit justify-between">
                     <div className="space-y-2">
-                        <p style={{ fontSize: '17px' }}>Senior UX Designer</p>
+                        <p style={{ fontSize: '17px' }}>Experience name</p>
                         <p style={{ color: '#00000099' }}>
                             Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
                         </p>
