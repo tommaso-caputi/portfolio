@@ -16,7 +16,7 @@ export default function FirstSection() {
                 sint. Velit officia consequat duis enim velit mollit. Exercitation
                 veniam consequat sunt nostrud amet.
             </p>
-            <div className="flex flex-row"><p className="underline underline-offset-4">Lorem ipsum</p>&#8599;</div>
+            <div className="flex flex-row font-medium"><p className="underline underline-offset-4">Lorem ipsum</p>&#8599;</div>
         </div>
     );
 }
