@@ -18,7 +18,7 @@ export default function ProjectsSection() {
         {
             title: 'Dear Diary',
             description: "DearDiary is a user-friendly journaling app designed to support self-reflection and personal growth.",
-            period: '2023',
+            period: '2024',
             imageUrl: '/LogoDearDiary.png',
             tryItOutUrl: 'https://github.com/tommaso-caputi/Dear-Diary/releases'
         }
