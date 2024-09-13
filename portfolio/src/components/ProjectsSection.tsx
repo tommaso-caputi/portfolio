@@ -14,6 +14,13 @@ export default function ProjectsSection() {
             description: "The adoption of delivery management software for handling orders and deliveries has improved the company's operations by 70%.",
             period: '2023 - present',
             imageUrl: '/LogoDeliveryApp.png'
+        },
+        {
+            title: 'Dear Diary',
+            description: "DearDiary is a user-friendly journaling app designed to support self-reflection and personal growth.",
+            period: '2023',
+            imageUrl: '/LogoDearDiary.png',
+            tryItOutUrl: 'https://github.com/tommaso-caputi/Dear-Diary/releases'
         }
     ];
 
@@ -26,8 +33,8 @@ export default function ProjectsSection() {
                     title={proj.title}
                     description={proj.description}
                     period={proj.period}
-                    imageUrl={proj.imageUrl || ''}
-                    tryItOutUrl={proj.tryItOutUrl || ''}
+                    imageUrl={proj.imageUrl}
+                    tryItOutUrl={proj.tryItOutUrl}
                 />
             ))}
         </div>
@@ -56,10 +63,10 @@ function Project({ title, description, period, imageUrl, tryItOutUrl }: any) {
                     <span className='flex content-center'>
                         <Image
                             src={imageUrl}
-                            width={145}
-                            height={160}
+                            width={120}
+                            height={120}
                             alt={`Logo of ${title}`}
-                            style={{ objectFit: 'contain' }}
+                            style={{ objectFit: 'contain' }} // Maintain aspect ratio and fit within the bounds
                         />
                     </span>
                 )}
