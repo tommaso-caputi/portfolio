@@ -3,13 +3,6 @@ import Image from 'next/image';
 export default function ProjectsSection() {
     const projects = [
         {
-            title: 'Crypto Keeper',
-            description: 'Crypto Keeper is a useful application for the exchange of cryptocurrencies using the nfc technology.',
-            period: '2022 - 2023',
-            imageUrl: '/LogoCryptoKeeper.png',
-            tryItOutUrl: 'https://cryptokeeper.altervista.org/'
-        },
-        {
             title: "Masseria Coppa's delivery app",
             description: "The adoption of delivery management software for handling orders and deliveries has improved the company's operations by 70%.",
             period: '2023 - present',
@@ -21,6 +14,13 @@ export default function ProjectsSection() {
             period: '2024',
             imageUrl: '/LogoDearDiary.png',
             tryItOutUrl: 'https://github.com/tommaso-caputi/Dear-Diary/releases'
+        },
+        {
+            title: 'Crypto Keeper',
+            description: 'Crypto Keeper is a useful application for the exchange of cryptocurrencies using the nfc technology.',
+            period: '2022 - 2023',
+            imageUrl: '/LogoCryptoKeeper.png',
+            tryItOutUrl: 'https://cryptokeeper.altervista.org/'
         }
     ];
 
