@@ -19,12 +19,11 @@ export default function FirstSection() {
                 </span>
             </div>
             <div className="font-medium text-2xl">
-                I am Tommaso!
+                Hi, I am Tommaso!
             </div>
             <p className="text-slate-500">
-                Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
-                sint. Velit officia consequat duis enim velit mollit. Exercitation
-                veniam consequat sunt nostrud amet.
+                I&apos;m a passionate software engeneering student at Politecnico di Bari
+                with expertise in building modern, scalable, and user-friendly web and mobile apps.
             </p>
             <a href="https://tommasocaputi.altervista.org/portfolio/terminal/index.html" target="_blank" rel="noopener noreferrer" className="flex flex-row">
                 <div className="flex flex-row font-medium"><p className="underline underline-offset-4">terminal ui</p>&#8599;</div>
