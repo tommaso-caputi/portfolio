@@ -8,6 +8,12 @@ export default function ProjectsSection() {
             period: '2022 - 2023',
             imageUrl: '/LogoCryptoKeeper.png',
             tryItOutUrl: 'https://cryptokeeper.altervista.org/'
+        },
+        {
+            title: 'Delivery app',
+            description: "The adoption of delivery management software for handling orders and deliveries has improved the company's operations by 70%.",
+            period: '2023 - present',
+            imageUrl: '/LogoDeliveryApp.png'
         }
     ];
 
@@ -53,7 +59,7 @@ function Project({ title, description, period, imageUrl, tryItOutUrl }: any) {
                             width={145}
                             height={160}
                             alt={`Logo of ${title}`}
-                            style={{ objectFit: 'contain' }}  // Ensure the image keeps its aspect ratio
+                            style={{ objectFit: 'contain' }}
                         />
                     </span>
                 )}
