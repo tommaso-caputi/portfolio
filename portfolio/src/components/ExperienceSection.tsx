@@ -6,11 +6,6 @@ export default function ExperienceSection() {
             title: 'Bachelor of Software Engineering',
             descr: 'Currently, I am studying Software Engineering at the Polytechnic University of Bari.',
             period: '2023 - present'
-        },
-        {
-            title: 'Lorem Ipsum',
-            descr: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-            period: '2020 - 2023'
         }
     ];
 

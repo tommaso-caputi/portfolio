@@ -3,16 +3,11 @@ import Image from 'next/image';
 export default function ProjectsSection() {
     const projects = [
         {
-            title: 'Project 1',
-            description: 'Fill your project brief here. It can be the outcome of the project, or some success metrics, or a cheesy tagline.',
-            period: '2019 - present',
-            imageUrl: 'https://res.cloudinary.com/dbyioi2qq/q_auto/v1658400349/static/default-imagesvg_1658400349_15767.svg'
-        },
-        {
-            title: 'Project 2',
-            description: 'Another project brief goes here. Mention any significant achievements or results.',
-            period: '2018 - 2019',
-            imageUrl: 'https://res.cloudinary.com/dbyioi2qq/q_auto/v1658400349/static/default-imagesvg_1658400349_15767.svg'
+            title: 'Crypto Keeper',
+            description: 'Crypto Keeper is a useful application for the exchange of cryptocurrencies using the nfc technology.',
+            period: '2022 - 2023',
+            imageUrl: '/LogoCryptoKeeper.png',
+            tryItOutUrl: 'https://cryptokeeper.altervista.org/'
         }
     ];
 
@@ -25,35 +20,43 @@ export default function ProjectsSection() {
                     title={proj.title}
                     description={proj.description}
                     period={proj.period}
-                    imageUrl={proj.imageUrl}
+                    imageUrl={proj.imageUrl || ''}
+                    tryItOutUrl={proj.tryItOutUrl || ''}
                 />
             ))}
         </div>
     );
 }
 
-function Project({ title, description, period, imageUrl }: any) {
+function Project({ title, description, period, imageUrl, tryItOutUrl }: any) {
     return (
         <div>
             <p className="text-xs text-slate-300 pb-2" style={{ color: '#00000060' }}>{period}</p>
-            <div className="flex h-fit justify-between">
-                <div className="space-y-4">
+            <div className="flex">
+                <div className="space-y-4 w-11/12">
                     <p style={{ fontSize: '17px' }} className='font-medium'>{title}</p>
                     <p style={{ color: '#00000099' }}>
                         {description}
                     </p>
-                    <div className="flex flex-row">
-                        <p className="underline underline-offset-4 font-medium">Try it out</p>&#8599;
-                    </div>
+                    {tryItOutUrl && (
+                        <div className="flex flex-row">
+                            <a href={tryItOutUrl} target="_blank" rel="noopener noreferrer" className="flex flex-row">
+                                <p className="underline underline-offset-4 font-medium">Try it out</p>&#8599;
+                            </a>
+                        </div>
+                    )}
                 </div>
-                <span>
-                    {/* <Image
-                        src={imageUrl}
-                        width={145}
-                        height={145}
-                        alt={`Logo of ${title}`}
-                    /> */}
-                </span>
+                {imageUrl && (
+                    <span className='flex content-center'>
+                        <Image
+                            src={imageUrl}
+                            width={145}
+                            height={160}
+                            alt={`Logo of ${title}`}
+                            style={{ objectFit: 'contain' }}  // Ensure the image keeps its aspect ratio
+                        />
+                    </span>
+                )}
             </div>
         </div>
     );
