@@ -6,6 +6,11 @@ export default function ExperienceSection() {
             title: 'Bachelor of Software Engineering',
             descr: 'Currently, I am studying Software Engineering at the Polytechnic University of Bari.',
             period: '2023 - present'
+        },
+        {
+            title: 'IT Consultant Stage',
+            descr: 'Summer stage at Viba Software Engineering in Ruvo Di Puglia, Italy.',
+            period: 'Jun. 2023'
         }
     ];
 
