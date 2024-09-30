@@ -6,7 +6,8 @@ export default function FirstSection() {
                     className="block h-20 w-20 min-w-20 min-h-20 bg-cover rounded-full shadow-xl"
                     style={{
                         backgroundImage:
-                            "url('https://avatars.githubusercontent.com/u/56504768?v=4')",
+                            //"url('https://avatars.githubusercontent.com/u/56504768?v=4')",
+                            "url(/iconProfile.jpeg)"
                     }}>
                     <span
                         className="absolute w-8 h-8 bg-cover rounded-full"
