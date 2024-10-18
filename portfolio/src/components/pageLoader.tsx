@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 
 const pageLoader = (length: number, delay: number) => {
-    const [visibleSections, setVisibleSections] = useState(new Array(length).fill(false));
+    const [visibleSections, setVisibleSections] = useState(new Array(length + 1).fill(false));
 
     useEffect(() => {
         let timeoutId: NodeJS.Timeout;
 
         const showSections = (index: number) => {
-            if (index < length) {
+            if (index < length + 1) {
                 setVisibleSections((prev) => {
                     const newVisibleSections = [...prev];
                     newVisibleSections[index] = true;
