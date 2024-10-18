@@ -4,8 +4,8 @@ import React, { useState } from 'react';
 import { FaGithub } from "react-icons/fa";
 import { SlNotebook } from "react-icons/sl";
 import { FiHome } from "react-icons/fi";
-
-
+import { FaLinkedin } from "react-icons/fa";
+import { IoIosMail } from "react-icons/io";
 
 export default function Bar() {
     const [barWidth, setBarWidth] = useState(0);
@@ -37,7 +37,7 @@ export default function Bar() {
                             transition-all duration-200 ease-in-out`}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
-                style={{ width: `${150 + barWidth}px` }}
+                style={{ width: `${250 + barWidth}px` }}
             >
                 {/* Home Icon */}
                 <div
@@ -91,6 +91,38 @@ export default function Bar() {
                         <FaGithub size={18} />
                     </a>
                     {hoveredIcon === 'github' && popover('GitHub')}
+                </div>
+                {/* Linkedin Icon */}
+                <div
+                    className="flex aspect-square cursor-pointer items-center justify-center rounded-full hover:bg-gray-200 transition-all duration-300 relative"
+                    style={{ width: "40px", height: "40px" }}
+                    onMouseEnter={() => handleIconMouseEnter('linkedin')}
+                    onMouseLeave={handleIconMouseLeave}
+                >
+                    <a
+                        className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground rounded-full size-12"
+                        data-state="closed"
+                        href="https://linkedin.it/in/tommaso-caputi"
+                    >
+                        <FaLinkedin size={18} />
+                    </a>
+                    {hoveredIcon === 'linkedin' && popover('Linkedin')}
+                </div>
+                {/* Mail Icon */}
+                <div
+                    className="flex aspect-square cursor-pointer items-center justify-center rounded-full hover:bg-gray-200 transition-all duration-300 relative"
+                    style={{ width: "40px", height: "40px" }}
+                    onMouseEnter={() => handleIconMouseEnter('mail')}
+                    onMouseLeave={handleIconMouseLeave}
+                >
+                    <a
+                        className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground rounded-full size-12"
+                        data-state="closed"
+                        href="mailto:tommasocaputi85@gmail.com"
+                    >
+                        <IoIosMail size={24} />
+                    </a>
+                    {hoveredIcon === 'mail' && popover('Mail')}
                 </div>
             </div>
         </div>
