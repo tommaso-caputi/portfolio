@@ -56,7 +56,7 @@ export default function Post1() {
                                 </ul>
                                 <ul className="inner-bulleted-list">
                                     <li>
-                                        The weight matrix is calculated via <a href="https://en.wikipedia.org/wiki/Hebbian_theory">Hebb's law of association</a> (the outer product of the image vector):
+                                        The weight matrix is calculated via <a href="https://en.wikipedia.org/wiki/Hebbian_theory">Hebb&apos;s law of association</a> (the outer product of the image vector):
                                         <br />
                                         <span style={{ fontWeight: 'bold' }}>w<sub>ij</sub> = Σ<sub>μ=1</sub><sup>p</sup> s<sub>i</sub><sup>μ</sup> s<sub>j</sub><sup>μ</sup></span>
                                     </li>
@@ -169,7 +169,7 @@ def reconstructed_image(n, w, state): # Use the weight matrix to reconstruct an 
                             </div>
                         </div>
                         <div>
-                            <p className="normal-text">Now let's run the code and analyze the results:</p>
+                            <p className="normal-text">Now let&apos;s run the code and analyze the results:</p>
                             <pre className="code-block">
                                 <code>
                                     {`#multile patterns memory
@@ -203,7 +203,7 @@ show_array(state)`}
                             </pre>
                             <p className="normal-text">Output:</p>
                             <div className="flex justify-center"><img src="/post-assets/post1/output.png" className="w-40" /></div>
-                            <p className="normal-text">As we can see from the output, the Hopfield network successfully reconstructed the original image (Pattern 2) from the modified input. This demonstrates the network's ability to recover stored patterns even when presented with noisy or incomplete data. The reconstructed image closely resembles the original, showcasing the power of associative memory.</p>
+                            <p className="normal-text">As we can see from the output, the Hopfield network successfully reconstructed the original image (Pattern 2) from the modified input. This demonstrates the network&apos;s ability to recover stored patterns even when presented with noisy or incomplete data. The reconstructed image closely resembles the original, showcasing the power of associative memory.</p>
                         </div>
                     </section>
                     <section>
