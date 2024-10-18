@@ -9,6 +9,7 @@ export default function Blog() {
             title: "Hopfield Network Python implementation",
             date: '12-10-2024',
             url: "/blog/hopfieldnetwork"
+            //url: "/post-assets/post1/hopfieldnetwork.html"
         }
     ];
 
