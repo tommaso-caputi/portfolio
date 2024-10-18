@@ -168,6 +168,43 @@ def reconstructed_image(n, w, state): # Use the weight matrix to reconstruct an 
                                 <p>Pattern 5</p>
                             </div>
                         </div>
+                        <div>
+                            <p className="normal-text">Now let's run the code and analyze the results:</p>
+                            <pre className="code-block">
+                                <code>
+                                    {`#multile patterns memory
+side = 50
+n = side * side #number of neurons(pixels)
+
+#memory images
+imgs=[]
+for i in range(1,6): #memorize images from 1 to x-1
+  imgs.append(load_img(f'p{i}.jpeg', side))
+
+print('memorized images:')
+show_multiple_arraysi(imgs)
+
+#weights matrix
+w = np.zeros((n,n))
+for p in range(len(imgs)):
+  w+=calculate_w(imgs[p])
+
+#set inital state
+state = modify_img(n, load_img('p2.jpeg', side)) #modified image
+#state = np.random.choice([-1,1], size=n) #random pixels
+print('init state:')
+show_array(state)
+
+#reconstruct image
+state = reconstructed_image(n, w, state)
+print('reconstructed image:')
+show_array(state)`}
+                                </code>
+                            </pre>
+                            <p className="normal-text">Output:</p>
+                            <div className="flex justify-center"><img src="/post-assets/post1/output.png" className="w-40" /></div>
+                            <p className="normal-text">As we can see from the output, the Hopfield network successfully reconstructed the original image (Pattern 2) from the modified input. This demonstrates the network's ability to recover stored patterns even when presented with noisy or incomplete data. The reconstructed image closely resembles the original, showcasing the power of associative memory.</p>
+                        </div>
                     </section>
                     <section>
                         <h3 className="subparagraph-title">Conclusion</h3>
