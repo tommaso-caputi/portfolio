@@ -55,3 +55,69 @@ body {
   height: 100%;
   background-color: #111;
 }
+
+.transition-opacity {
+  transition: opacity 1.5s ease;
+}
+
+.opacity-0 {
+  opacity: 0;
+}
+
+.opacity-100 {
+  opacity: 1;
+}
+
+
+
+/* Post ------------------------------ */
+.normal-text {
+  /* font-size: 17px; */
+  margin: 0.5rem 0;
+}
+
+.subparagraph-title {
+  font-size: 1.75rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.bulleted-list {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+}
+
+.inner-bulleted-list {
+  list-style-type: circle;
+  margin-left: 1.5rem;
+  padding-top: 0.25rem;
+}
+
+.inner-bulleted-list-title {
+  margin-bottom: 0.25rem;
+  margin-top: 0.5rem;
+}
+
+.numbered-list {
+  list-style-type: decimal;
+  margin-left: 1.5rem;
+}
+
+.code-block {
+  padding: 1.5rem;
+  background-color: #f5f2f0;
+  overflow: auto;
+}
+
+li {
+  margin-bottom: 1.5rem;
+}
+
+.fixed-size-image {
+  width: 10rem;
+  height: 10rem;
+  object-fit: cover;
+}
+
+/* ---------------------------------- */
