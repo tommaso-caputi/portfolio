@@ -1,10 +1,13 @@
 "use client";
 
 import React, { useState } from 'react';
+import { FaGithub } from "react-icons/fa";
+import { SlNotebook } from "react-icons/sl";
+
 
 export default function Bar() {
     const [barWidth, setBarWidth] = useState(0);
-    const [hoveredIcon, setHoveredIcon] = useState(null); // State to track which icon is hovered
+    const [hoveredIcon, setHoveredIcon] = useState(null);
 
     const handleMouseEnter = () => {
         setBarWidth((prevWidth) => prevWidth + 25);
@@ -32,7 +35,7 @@ export default function Bar() {
                             transition-all duration-200 ease-in-out`}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
-                style={{ width: `${100 + barWidth}px` }}
+                style={{ width: `${150 + barWidth}px` }}
             >
                 {/* Home Icon */}
                 <div
@@ -65,11 +68,8 @@ export default function Bar() {
                             <polyline points="9 22 9 12 15 12 15 22"></polyline>
                         </svg>
                     </a>
-                    {hoveredIcon === 'home' && (
-                        popover('Home')
-                    )}
+                    {hoveredIcon === 'home' && popover('Home')}
                 </div>
-
                 {/* Blog Icon */}
                 <div
                     className="flex aspect-square cursor-pointer items-center justify-center rounded-full hover:bg-gray-200 transition-all duration-300 relative"
@@ -102,9 +102,24 @@ export default function Bar() {
                             <path d="M16 2v20"></path>
                         </svg>
                     </a>
-                    {hoveredIcon === 'blog' && (
-                        popover('Blog')
-                    )}
+                    {hoveredIcon === 'blog' && popover('Blog')}
+                </div>
+                <div data-orientation="vertical" role="none" className="shrink-0 bg-border w-[1px] h-full bg-slate-300"></div>
+                {/* Github Icon */}
+                <div
+                    className="flex aspect-square cursor-pointer items-center justify-center rounded-full hover:bg-gray-200 transition-all duration-300 relative"
+                    style={{ width: "40px", height: "40px" }}
+                    onMouseEnter={() => handleIconMouseEnter('github')}
+                    onMouseLeave={handleIconMouseLeave}
+                >
+                    <a
+                        className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground rounded-full size-12"
+                        data-state="closed"
+                        href="https://github.com"
+                    >
+                        <FaGithub />
+                    </a>
+                    {hoveredIcon === 'github' && popover('GitHub')}
                 </div>
             </div>
         </div>
@@ -113,9 +128,9 @@ export default function Bar() {
 
 function popover(name: string) {
     return (
-        < div className="absolute bottom-full mb-2 left-1/2 transform -translate-x-1/2 
-                         p-1.5 rounded shadow-lg text-white bg-black text-sm" >
+        <div className="absolute bottom-full mb-2 left-1/2 transform -translate-x-1/2 
+                        p-1.5 rounded shadow-lg text-white bg-black text-sm">
             {name}
-        </div >
+        </div>
     );
 }
