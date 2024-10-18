@@ -27,7 +27,7 @@ export default function Post1() {
                         <h3 className="subparagraph-title">What is a Hopfield Network?</h3>
                         <p className="normal-text">Hopfield networks, introduced by physicist John Joseph Hopfield in 1982, offer a fascinating perspective on the workings of <strong>associative memory</strong> — a mechanism that allows us to recall information based on its content, much like when a scent evokes a childhood memory. Hopfield, who won the Nobel Prize in Physics in 2024 alongside Geoffrey Hinton for their pioneering role in developing neural networks, designed a model that captures the essence of this process within an artificial system.</p>
                         <p className="normal-text">A Hopfield network can perform two primary tasks: <strong>pattern recognition</strong> and <strong>error correction</strong>. It can store a set of patterns (binary vectors) in its memory, and when a new input is presented, the network will try to recall the closest stored pattern, even if the input is incomplete or noisy. This process is known as <strong>auto-association</strong>, where the network can reconstruct a full pattern from a partial one. For example, if the net has learned to store images, it can recognize an image even if parts are missing or distorted, retrieving the correct version from memory.</p>
-                        <div className="flex justify-center my-2">
+                        <div className="flex justify-center my-8">
                             <img src="/post-assets/post1/patter-reconstruction.png" alt="Pattern Reconstruction" />
                         </div>
                     </section>
