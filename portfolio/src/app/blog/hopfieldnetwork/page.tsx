@@ -1,16 +1,11 @@
 "use client";
 
 import Bar from "@/components/Bar";
-import { useEffect } from "react";
+import pageLoader from "@/components/pageLoader";
 
 export default function Post1() {
-    useEffect(() => {
-        async function fetchHtml() {
-            const response = await fetch('/prova.html');
-        }
-
-        fetchHtml();
-    }, []);
+    const sections = 1;
+    const visibleSections = pageLoader(sections, 400);
 
     return (
         <div className="flex justify-center min-h-screen py-7">
@@ -24,7 +19,7 @@ export default function Post1() {
                     <p className="text-xs text-slate-300 pb-2" style={{ color: '#00000060' }}>August 18, 2024</p>
                 </div>
                 {/* Post */}
-                <div>
+                <div className={`transition-opacity duration-[1000ms] ${visibleSections[1] ? 'opacity-100' : 'opacity-0'}`}>
                     <header>
                         <h1 className="text-5xl font-bold pb-10">Hopfield Network Python implementation</h1>
                     </header>
@@ -182,6 +177,7 @@ def reconstructed_image(n, w, state): # Use the weight matrix to reconstruct an 
                     </section>
                 </div>
             </div>
+            <Bar />
         </div>
     );
 }
