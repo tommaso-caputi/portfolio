@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const pageLoader = (length: number, delay: number) => {
+const PageLoader = (length: number, delay: number) => {
     const [visibleSections, setVisibleSections] = useState(new Array(length + 1).fill(false));
 
     useEffect(() => {
@@ -27,4 +27,4 @@ const pageLoader = (length: number, delay: number) => {
     return visibleSections;
 };
 
-export default pageLoader;
+export default PageLoader;
