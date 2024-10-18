@@ -14,31 +14,27 @@ const sections = [
 
 export default function Home() {
   const [visibleSections, setVisibleSections] = useState(new Array(sections.length).fill(false));
-
   const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const index = sectionRefs.current.indexOf(entry.target as HTMLDivElement);
-          if (index >= 0) {
-            setVisibleSections((prev) => {
-              const newVisibleSections = [...prev];
-              newVisibleSections[index] = true;
-              return newVisibleSections;
-            });
-            observer.unobserve(entry.target);
-          }
-        }
-      });
-    });
+    let timeoutId: NodeJS.Timeout;
 
-    sectionRefs.current.forEach((section) => {
-      if (section) observer.observe(section);
-    });
+    const showSections = (index: number) => {
+      if (index < sections.length) {
+        setVisibleSections((prev) => {
+          const newVisibleSections = [...prev];
+          newVisibleSections[index] = true;
+          return newVisibleSections;
+        });
+        timeoutId = setTimeout(() => showSections(index + 1), 400); //set time
+      }
+    };
 
-    return () => observer.disconnect();
+    showSections(0);
+
+    return () => {
+      clearTimeout(timeoutId);
+    };
   }, []);
 
   return (
@@ -50,7 +46,7 @@ export default function Home() {
             ref={(el) => {
               sectionRefs.current[index] = el;
             }}
-            className={`transition-opacity duration-3000 ${visibleSections[index] ? 'opacity-100' : 'opacity-0'}`}
+            className={`transition-opacity duration-[1000ms] ${visibleSections[index] ? 'opacity-100' : 'opacity-0'}`}
           >
             {section.component}
           </div>

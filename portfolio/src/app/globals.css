@@ -57,7 +57,7 @@ body {
 }
 
 .transition-opacity {
-  transition: opacity 1s ease;
+  transition: opacity 1.5s ease;
 }
 
 .opacity-0 {
