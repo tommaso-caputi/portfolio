@@ -16,8 +16,8 @@ export default function Blog() {
 
     return (
         <div className="flex justify-center min-h-screen py-7">
-            <div className="space-y-20 pt-8 text-left px-3 sm:w-8/12 md:w-8/12 lg:w-5/12 mb-36">
-                <div className={`font-medium text-2xl transition-opacity duration-[1000ms] ${visibleSections[0] ? 'opacity-100' : 'opacity-0'}`}>
+            <div className="space-y-6 pt-8 text-left px-3 sm:w-8/12 md:w-8/12 lg:w-5/12 mb-36">
+                <div className={`font-medium pb-20 text-2xl transition-opacity duration-[1000ms] ${visibleSections[0] ? 'opacity-100' : 'opacity-0'}`}>
                     blog
                 </div>
                 {posts.map((proj, index) => (
@@ -42,7 +42,7 @@ function Post({ title, date, url }: any) {
         <div>
             <a href={url}>
                 <div className="flex">
-                    <div className="space-y-4 w-11/12">
+                    <div className="w-11/12">
                         <p style={{ fontSize: '17px' }} className='font-medium'>{title}</p>
                     </div>
                 </div>
