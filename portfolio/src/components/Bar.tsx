@@ -125,6 +125,7 @@ export default function Bar() {
                     {hoveredIcon === 'mail' && popover('Mail')}
                 </div>
             </div>
+            <div className="fade-bottom"></div>
         </div>
     );
 }
