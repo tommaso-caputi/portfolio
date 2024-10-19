@@ -33,6 +33,7 @@ export default function Post1() {
                     </section>
                     <section>
                         <h3 className="subparagraph-title">How it works?</h3>
+                        <p className="normal-text">A Hopfield network is composed of the following main components:</p>
                         <ul className="bulleted-list">
                             <li>
                                 <p className="inner-bulleted-list-title">Neurons (Node)</p>
@@ -208,10 +209,8 @@ show_array(state)`}
                     </section>
                     <section>
                         <h3 className="subparagraph-title">Conclusion</h3>
-                        <p className="normal-text">Hopfield networks are a remarkable fusion of biological inspiration and computational power. They not only deepen our understanding of how memory and association work in the brain, but also provide valuable insights into creating artificial intelligence systems that mimic human cognition. The ability of Hopfield networks to store and recall patterns makes them a vital tool in fields such as <strong>computer vision</strong>, <strong>machine learning</strong>, and <strong>data recovery</strong>.</p>
-                        <p className="normal-text">The code provided demonstrates how to implement a Hopfield network in Python. By extending the capabilities of Hopfield networks, we can explore exciting new possibilities in the realm of artificial intelligence and machine learning. As we delve deeper into the intricacies of these networks, we stand to unlock further potential in bridging the gap between human and artificial intelligence.</p>
-                        <p className="normal-text">In conclusion, Hopfield networks are more than just a theoretical construct; they represent a significant step forward in our understanding of neural computation and memory. Their application can lead to innovative solutions across various domains, paving the way for future research and advancements in artificial intelligence.</p>
-                    </section>
+                        <p className="normal-text">Hopfield networks are a powerful model for associative memory, capable of storing and retrieving binary patterns. In the example, we demonstrated how the network can memorize multiple patterns and successfully reconstruct one of them, even when the input is noisy or partially altered. This ability to recall original patterns from distorted inputs highlights the network’s use in tasks like error correction and pattern recognition.</p>                    </section>
+                        <p className="normal-text">However, Hopfield networks also have limitations. One key limitation is their <strong>storage capacity</strong>. The network can store up to approximately <strong>0.15 × N</strong> patterns reliably, where <strong>N</strong> is the number of neurons. If more patterns are stored, the network may struggle to distinguish between them, leading to incorrect reconstructions or “spurious states” that don’t correspond to any of the stored patterns. Despite this, Hopfield networks laid foundational principles for later neural network models and remain a fundamental concept in the field of artificial intelligence and cognitive science.</p>
                 </div>
             </div>
             <Bar />
