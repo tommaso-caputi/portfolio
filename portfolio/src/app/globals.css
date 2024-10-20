@@ -115,9 +115,12 @@ li {
 }
 
 .fixed-size-image {
-  width: 10rem;
-  height: 10rem;
-  object-fit: cover;
+  width: 9.5rem;
+  height: auto;
+}
+
+.flex {
+  flex-shrink: 0;
 }
 
 /* ---------------------------------- */
