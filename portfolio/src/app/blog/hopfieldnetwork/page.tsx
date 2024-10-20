@@ -21,7 +21,7 @@ export default function Post1() {
                 {/* Post */}
                 <div className={`transition-opacity duration-[1000ms] ${visibleSections[1] ? 'opacity-100' : 'opacity-0'}`}>
                     <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold pb-10">Hopfield Network Python implementation</h1>
-                    {/* <section>
+                    <section>
                         <h3 className="subparagraph-title">What is a Hopfield Network?</h3>
                         <p className="normal-text">Hopfield networks, introduced by physicist John Joseph Hopfield in 1982, offer a fascinating perspective on the workings of <strong>associative memory</strong> — a mechanism that allows us to recall information based on its content, much like when a scent evokes a childhood memory. Hopfield, who won the Nobel Prize in Physics in 2024 alongside Geoffrey Hinton for their pioneering role in developing neural networks, designed a model that captures the essence of this process within an artificial system.</p>
                         <p className="normal-text">A Hopfield network can perform two primary tasks: <strong>pattern recognition</strong> and <strong>error correction</strong>. It can store a set of patterns (binary vectors) in its memory, and when a new input is presented, the network will try to recall the closest stored pattern, even if the input is incomplete or noisy. This process is known as <strong>auto-association</strong>, where the network can reconstruct a full pattern from a partial one. For example, if the net has learned to store images, it can recognize an image even if parts are missing or distorted, retrieving the correct version from memory.</p>
@@ -73,7 +73,7 @@ export default function Post1() {
                                 </ul>
                             </li>
                         </ul>
-                    </section> */}
+                    </section>
                     <section>
                         <h3 className="subparagraph-title">Python implementation</h3>
                         <p className="normal-text">Let’s write some code for demonstrates how a Hopfield network can be used to store and reconstruct multiple images.</p>
@@ -205,10 +205,10 @@ show_array(state)`}
                             <p className="normal-text">As we can see from the output, the Hopfield network successfully reconstructed the original image (Pattern 2) from the modified input. This demonstrates the network&apos;s ability to recover stored patterns even when presented with noisy or incomplete data. The reconstructed image closely resembles the original, showcasing the power of associative memory.</p>
                         </div>
                     </section>
-                    {/* <section>
+                    <section>
                         <h3 className="subparagraph-title">Conclusion</h3>
                         <p className="normal-text">However, Hopfield networks also have limitations. One key limitation is their <strong>storage capacity</strong>. The network can store up to approximately <strong>0.15 × N</strong> patterns reliably, where <strong>N</strong> is the number of neurons. If more patterns are stored, the network may struggle to distinguish between them, leading to incorrect reconstructions or “spurious states” that don’t correspond to any of the stored patterns. Despite this, Hopfield networks laid foundational principles for later neural network models and remain a fundamental concept in the field of artificial intelligence and cognitive science.</p>
-                    </section> */}
+                    </section>
                 </div>
             </div>
             <Bar />
