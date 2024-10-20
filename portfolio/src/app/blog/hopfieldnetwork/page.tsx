@@ -2,6 +2,7 @@
 
 import Bar from "@/components/Bar";
 import pageLoader from "@/components/pageLoader";
+import { CodeBlock, androidstudio } from 'react-code-blocks';
 
 export default function Post1() {
     const sections = 2;
@@ -77,22 +78,21 @@ export default function Post1() {
                     <section>
                         <h3 className="subparagraph-title">Python implementation</h3>
                         <p className="normal-text">Let’s write some code for demonstrates how a Hopfield network can be used to store and reconstruct multiple images.</p>
-                        {/* <ul className="numbered-list">
+                        <ul className="numbered-list">
                             <li>
                                 <p className="normal-text">Import libraries</p>
-                                <pre className="code-block">
-                                    <code>
-                                        {`import numpy as np # for numerical operations
+                                <CodeBlock
+                                    text={`import numpy as np # for numerical operations
 import matplotlib.pyplot as plt # for displaying images(array)
 from PIL import Image # for image processing`}
-                                    </code>
-                                </pre>
+                                    language="Python"
+                                    theme={androidstudio}
+                                />
                             </li>
                             <li>
                                 <p className="normal-text">Image processing functions</p>
-                                <pre className="code-block">
-                                    <code>
-                                        {`def load_img(path, side): # Load and process images into a binary array, where pixels are represented as 1 or -1
+                                <CodeBlock
+                                    text={`def load_img(path, side): # Load and process images into a binary array, where pixels are represented as 1 or -1
     img = Image.open(path)
     img = img.resize((side, side))
     img = img.convert('1')
@@ -113,14 +113,14 @@ def modify_img(n, img): # Introduce noise or modifications to an image, for test
         if i > n / 2 - 1:
             img[i] = -1
     return img`}
-                                    </code>
-                                </pre>
+                                    language="Python"
+                                    theme={androidstudio}
+                                />
                             </li>
                             <li>
                                 <p className="normal-text">Hopfield net equations</p>
-                                <pre className="code-block">
-                                    <code>
-                                        {`# weights matrix
+                                <CodeBlock
+                                    text={`# weights matrix
 def calculate_w(img): # Create a weight matrix using the Hebbian learning rule based on the outer product of the image vector.
     '''
     w = np.zeros((n,n))
@@ -140,10 +140,11 @@ def reconstructed_image(n, w, state): # Use the weight matrix to reconstruct an 
         state[i] = 1 if sum > 0 else -1
     return state
     # return np.dot(w, state)`}
-                                    </code>
-                                </pre>
+                                    language="Python"
+                                    theme={androidstudio}
+                                />
                             </li>
-                        </ul> */}
+                        </ul>
                         <p>Here is an example of a Hopfield network that memorizes 5 different patterns and reconstructs them from a modified pattern:</p>
                         <div className="flex space-x-4 overflow-x-auto mt-2 mb-4">
                             <div className="flex flex-col space-y-2">
@@ -169,9 +170,8 @@ def reconstructed_image(n, w, state): # Use the weight matrix to reconstruct an 
                         </div>
                         <div>
                             <p className="normal-text">Now let&apos;s run the code and analyze the results:</p>
-                            {/* <pre className="code-block">
-                                <code>
-                                    {`#multile patterns memory
+                            <CodeBlock
+                                text={`#multile patterns memory
 side = 50
 n = side * side #number of neurons(pixels)
 
@@ -198,8 +198,10 @@ show_array(state)
 state = reconstructed_image(n, w, state)
 print('reconstructed image:')
 show_array(state)`}
-                                </code>
-                            </pre> */}
+                                language="Python"
+                                showLineNumbers={false}
+                                theme={androidstudio}
+                            />
                             <p className="normal-text">Output:</p>
                             <div className="flex justify-center"><img src="/post-assets/post1/output.png" className="w-40" /></div>
                             <p className="normal-text">As we can see from the output, the Hopfield network successfully reconstructed the original image (Pattern 2) from the modified input. This demonstrates the network&apos;s ability to recover stored patterns even when presented with noisy or incomplete data. The reconstructed image closely resembles the original, showcasing the power of associative memory.</p>
