@@ -2,6 +2,7 @@
 
 import Bar from "@/components/Bar";
 import pageLoader from "@/components/pageLoader";
+import { CodeBlock, androidstudio } from 'react-code-blocks';
 
 export default function Post1() {
     const sections = 2;
@@ -20,9 +21,7 @@ export default function Post1() {
                 </div>
                 {/* Post */}
                 <div className={`transition-opacity duration-[1000ms] ${visibleSections[1] ? 'opacity-100' : 'opacity-0'}`}>
-                    <header>
-                        <h1 className="text-5xl font-bold pb-10">Hopfield Network Python implementation</h1>
-                    </header>
+                    <h1 className="text-4xl md:text-5xl font-bold pb-10">Hopfield Network Python implementation</h1>
                     <section>
                         <h3 className="subparagraph-title">What is a Hopfield Network?</h3>
                         <p className="normal-text">Hopfield networks, introduced by physicist John Joseph Hopfield in 1982, offer a fascinating perspective on the workings of <strong>associative memory</strong> — a mechanism that allows us to recall information based on its content, much like when a scent evokes a childhood memory. Hopfield, who won the Nobel Prize in Physics in 2024 alongside Geoffrey Hinton for their pioneering role in developing neural networks, designed a model that captures the essence of this process within an artificial system.</p>
@@ -82,19 +81,21 @@ export default function Post1() {
                         <ul className="numbered-list">
                             <li>
                                 <p className="normal-text">Import libraries</p>
-                                <pre className="code-block">
-                                    <code>
-                                        {`import numpy as np # for numerical operations
+                                <div className="code-container md:w-full">
+                                    <CodeBlock
+                                        text={`import numpy as np # for numerical operations
 import matplotlib.pyplot as plt # for displaying images(array)
 from PIL import Image # for image processing`}
-                                    </code>
-                                </pre>
+                                        language="Python"
+                                        theme={androidstudio}
+                                    />
+                                </div>
                             </li>
                             <li>
                                 <p className="normal-text">Image processing functions</p>
-                                <pre className="code-block">
-                                    <code>
-                                        {`def load_img(path, side): # Load and process images into a binary array, where pixels are represented as 1 or -1
+                                <div className="code-container md:w-full">
+                                    <CodeBlock
+                                        text={`def load_img(path, side): # Load and process images into a binary array, where pixels are represented as 1 or -1
     img = Image.open(path)
     img = img.resize((side, side))
     img = img.convert('1')
@@ -115,14 +116,16 @@ def modify_img(n, img): # Introduce noise or modifications to an image, for test
         if i > n / 2 - 1:
             img[i] = -1
     return img`}
-                                    </code>
-                                </pre>
+                                        language="Python"
+                                        theme={androidstudio}
+                                    />
+                                </div>
                             </li>
                             <li>
                                 <p className="normal-text">Hopfield net equations</p>
-                                <pre className="code-block">
-                                    <code>
-                                        {`# weights matrix
+                                <div className="code-container md:w-full">
+                                    <CodeBlock
+                                        text={`# weights matrix
 def calculate_w(img): # Create a weight matrix using the Hebbian learning rule based on the outer product of the image vector.
     '''
     w = np.zeros((n,n))
@@ -142,8 +145,10 @@ def reconstructed_image(n, w, state): # Use the weight matrix to reconstruct an 
         state[i] = 1 if sum > 0 else -1
     return state
     # return np.dot(w, state)`}
-                                    </code>
-                                </pre>
+                                        language="Python"
+                                        theme={androidstudio}
+                                    />
+                                </div>
                             </li>
                         </ul>
                         <p>Here is an example of a Hopfield network that memorizes 5 different patterns and reconstructs them from a modified pattern:</p>
@@ -171,9 +176,9 @@ def reconstructed_image(n, w, state): # Use the weight matrix to reconstruct an 
                         </div>
                         <div>
                             <p className="normal-text">Now let&apos;s run the code and analyze the results:</p>
-                            <pre className="code-block">
-                                <code>
-                                    {`#multile patterns memory
+                            <div className="code-container md:w-full">
+                                <CodeBlock
+                                    text={`#multile patterns memory
 side = 50
 n = side * side #number of neurons(pixels)
 
@@ -200,8 +205,11 @@ show_array(state)
 state = reconstructed_image(n, w, state)
 print('reconstructed image:')
 show_array(state)`}
-                                </code>
-                            </pre>
+                                    language="Python"
+                                    showLineNumbers={false}
+                                    theme={androidstudio}
+                                />
+                            </div>
                             <p className="normal-text">Output:</p>
                             <div className="flex justify-center"><img src="/post-assets/post1/output.png" className="w-40" /></div>
                             <p className="normal-text">As we can see from the output, the Hopfield network successfully reconstructed the original image (Pattern 2) from the modified input. This demonstrates the network&apos;s ability to recover stored patterns even when presented with noisy or incomplete data. The reconstructed image closely resembles the original, showcasing the power of associative memory.</p>
@@ -209,8 +217,9 @@ show_array(state)`}
                     </section>
                     <section>
                         <h3 className="subparagraph-title">Conclusion</h3>
-                        <p className="normal-text">Hopfield networks are a powerful model for associative memory, capable of storing and retrieving binary patterns. In the example, we demonstrated how the network can memorize multiple patterns and successfully reconstruct one of them, even when the input is noisy or partially altered. This ability to recall original patterns from distorted inputs highlights the network’s use in tasks like error correction and pattern recognition.</p>                    </section>
+                        <p className="normal-text">Hopfield networks are a powerful model for associative memory, capable of storing and retrieving binary patterns. In the example, we demonstrated how the network can memorize multiple patterns and successfully reconstruct one of them, even when the input is noisy or partially altered. This ability to recall original patterns from distorted inputs highlights the network’s use in tasks like error correction and pattern recognition.</p>
                         <p className="normal-text">However, Hopfield networks also have limitations. One key limitation is their <strong>storage capacity</strong>. The network can store up to approximately <strong>0.15 × N</strong> patterns reliably, where <strong>N</strong> is the number of neurons. If more patterns are stored, the network may struggle to distinguish between them, leading to incorrect reconstructions or “spurious states” that don’t correspond to any of the stored patterns. Despite this, Hopfield networks laid foundational principles for later neural network models and remain a fundamental concept in the field of artificial intelligence and cognitive science.</p>
+                    </section>
                 </div>
             </div>
             <Bar />

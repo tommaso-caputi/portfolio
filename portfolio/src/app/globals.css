@@ -104,10 +104,8 @@ body {
   margin-left: 1.5rem;
 }
 
-.code-block {
-  padding: 1.5rem;
-  background-color: #f5f2f0;
-  overflow: auto;
+.code-container {
+  width: 90vw;
 }
 
 li {
@@ -115,9 +113,12 @@ li {
 }
 
 .fixed-size-image {
-  width: 10rem;
-  height: 10rem;
-  object-fit: cover;
+  width: 9.5rem;
+  height: auto;
+}
+
+.flex {
+  flex-shrink: 0;
 }
 
 /* ---------------------------------- */
