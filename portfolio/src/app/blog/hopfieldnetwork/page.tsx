@@ -209,6 +209,7 @@ show_array(state)`}
                     </section>
                     <section>
                         <h3 className="subparagraph-title">Conclusion</h3>
+                        <p className="normal-text">Hopfield networks are a powerful model for associative memory, capable of storing and retrieving binary patterns. In the example, we demonstrated how the network can memorize multiple patterns and successfully reconstruct one of them, even when the input is noisy or partially altered. This ability to recall original patterns from distorted inputs highlights the network’s use in tasks like error correction and pattern recognition.</p>
                         <p className="normal-text">However, Hopfield networks also have limitations. One key limitation is their <strong>storage capacity</strong>. The network can store up to approximately <strong>0.15 × N</strong> patterns reliably, where <strong>N</strong> is the number of neurons. If more patterns are stored, the network may struggle to distinguish between them, leading to incorrect reconstructions or “spurious states” that don’t correspond to any of the stored patterns. Despite this, Hopfield networks laid foundational principles for later neural network models and remain a fundamental concept in the field of artificial intelligence and cognitive science.</p>
                     </section>
                 </div>
