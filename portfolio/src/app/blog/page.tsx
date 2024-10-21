@@ -7,7 +7,7 @@ export default function Blog() {
     const posts = [
         {
             title: "Hopfield Network Python implementation",
-            date: '12-10-2024',
+            date: '18-10-2024',
             url: "/blog/hopfieldnetwork"
             //url: "/post-assets/post1/hopfieldnetwork.html"
         }

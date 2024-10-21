@@ -111,7 +111,7 @@ def show_array(img_array): # Visualize images(array)
     plt.show()
 
 def modify_img(n, img): # Introduce noise or modifications to an image, for testing the network’s ability to reconstruct it
-    # Make 1/2% of image negative
+    # Make 50% of image negative
     for i in range(n):
         if i > n / 2 - 1:
             img[i] = -1
