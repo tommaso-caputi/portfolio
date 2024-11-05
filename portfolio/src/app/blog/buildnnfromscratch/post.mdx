@@ -1,15 +1,51 @@
 # Build Neural Network from Scratch in Python
 
-## **Introduction**
+## Introduction
 
 Neural networks are a class of machine learning models inspired by the structure of the human brain. They consist of layers of interconnected nodes (**neurons**) that can learn and generalize complex patterns in data. These networks are trained by adjusting the connections (**weights**) between neurons based on the data they process. Neural networks are widely used in fields like image recognition, natural language processing, and more.
 
 The goal of this post is to demonstrate how to build a simple neural network from scratch that can recognize handwritten digits from the MNIST dataset, a common benchmark in machine learning. We’ll guide you through each component of the neural network and cover the theory and code needed to understand its learning process.
 
-## **Dataset**
+## Dataset
 
 The **MNIST dataset** contains 60,000 training images and 10,000 test images of handwritten digits (0–9). Each image is 28x28 pixels, resulting in a 784-pixel input per image. The images are grayscale, so each pixel value ranges from 0 to 255, where 0 represents a white pixel and 255 represents a black one.
 
 To prepare the data, each image is flattened into a 784-dimensional vector. This enables us to input it directly into our neural network, which has 784 input neurons. We also normalize the pixel values by dividing by 255, ensuring each input value falls between 0 and 1.
 
-![mnist-dataset.png](Build%20Neural%20Network%20from%20Scratch%20in%20Python%2013554211f762806bb49dcf9694171b9e/mnist-dataset.png)
+<p align="center" className="image">
+<img src="/post-assets/post2/mnist-dataset.png" alt="drawing" width="300"/>
+</p>
+
+## Neural Network Structure
+
+Our neural network has three layers:
+
+1.	**Input Layer**: Consists of 784 neurons, one for each pixel in the flattened 28x28 image.
+
+2.	**Hidden Layer**: Contains 10 neurons with ReLU (Rectified Linear Unit) activation to introduce non-linearity. This layer helps the network learn more complex patterns within the data.
+
+3.	**Output Layer**: Has 10 neurons, one for each digit (0–9). The softmax activation function is applied to this layer to interpret the network’s output as probabilities for each digit class.
+
+The 784-10-10 architecture was chosen as a balance between simplicity and effectiveness. It’s simple enough to code from scratch and yet powerful enough to classify MNIST digits with reasonable accuracy.
+
+<p align="center" className="image">
+<img src="/post-assets/post2/nn-architecture.png" alt="drawing" width="300"/>
+</p>
+
+## How Neural Networks Learn
+
+The learning process of a neural network involves passing data through the network to make predictions, calculating the error in these predictions, and then adjusting the network’s parameters to reduce this error. The main stages are **forward propagation**, **activation functions**, **backward propagation**, and **gradient descent**.
+
+### Forward Propagation
+
+In **forward propagation**, data flows through the network from the input layer to the output layer. Each layer performs a set of computations to transform the input data and produce an output that is passed to the next layer. This process involves **linear transformations** and **activation functions**.
+
+
+For example, in our network:
+
+1. We start with the input $X$ (in this case, each image flattened into a 784-length vector).
+2. This input is transformed by a set of weights and biases in each layer. For the first layer, the transformation is:
+    
+    $Z_1 = W_1 \cdot X + b_1$
+    
+    where  $W_1$  and  $b_1$  are the weights and biases for the first layer, respectively. This produces an intermediate result $Z1$ that is passed through an **activation function** to introduce non-linearity.

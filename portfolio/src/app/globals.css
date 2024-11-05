@@ -83,6 +83,13 @@ body {
   margin-bottom: 1rem;
 }
 
+.subparagraph-title2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 .bulleted-list {
   list-style-type: disc;
   margin-left: 1.5rem;
@@ -101,7 +108,7 @@ body {
 
 .numbered-list {
   list-style-type: decimal;
-  margin-left: 1.5rem;
+  padding-left: 1.25rem;
 }
 
 .code-container {
@@ -119,6 +126,11 @@ li {
 
 .flex {
   flex-shrink: 0;
+}
+
+.image {
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 /* ---------------------------------- */
