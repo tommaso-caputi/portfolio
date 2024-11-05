@@ -10,6 +10,11 @@ export default function Blog() {
             date: '18-10-2024',
             url: "/blog/hopfieldnetwork"
             //url: "/post-assets/post1/hopfieldnetwork.html"
+        },
+        {
+            title: "Build Neural Network from Scratch in Python",
+            date: '05-11-2024',
+            url: "/blog/buildnnfromscratch"
         }
     ];
 

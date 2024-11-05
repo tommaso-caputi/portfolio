@@ -1,0 +1,15 @@
+# Build Neural Network from Scratch in Python
+
+## **Introduction**
+
+Neural networks are a class of machine learning models inspired by the structure of the human brain. They consist of layers of interconnected nodes (**neurons**) that can learn and generalize complex patterns in data. These networks are trained by adjusting the connections (**weights**) between neurons based on the data they process. Neural networks are widely used in fields like image recognition, natural language processing, and more.
+
+The goal of this post is to demonstrate how to build a simple neural network from scratch that can recognize handwritten digits from the MNIST dataset, a common benchmark in machine learning. We’ll guide you through each component of the neural network and cover the theory and code needed to understand its learning process.
+
+## **Dataset**
+
+The **MNIST dataset** contains 60,000 training images and 10,000 test images of handwritten digits (0–9). Each image is 28x28 pixels, resulting in a 784-pixel input per image. The images are grayscale, so each pixel value ranges from 0 to 255, where 0 represents a white pixel and 255 represents a black one.
+
+To prepare the data, each image is flattened into a 784-dimensional vector. This enables us to input it directly into our neural network, which has 784 input neurons. We also normalize the pixel values by dividing by 255, ensuring each input value falls between 0 and 1.
+
+![mnist-dataset.png](Build%20Neural%20Network%20from%20Scratch%20in%20Python%2013554211f762806bb49dcf9694171b9e/mnist-dataset.png)
