@@ -25,10 +25,13 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
                 />
             );
         },
+
         p: ({ children }) => <p className="normal-text">{children}</p>,
+
         ol: ({ children }) => <ol className="numbered-list">{children}</ol>,
         ul: ({ children }) => <ul className="bulleted-list">{children}</ul>,
         li: ({ children }) => <li className="">{children}</li>,
+
         pre: ({ children, className }) => {
             const language = className?.replace(/language-/, '') || 'python';
             return (

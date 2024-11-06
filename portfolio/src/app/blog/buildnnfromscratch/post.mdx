@@ -91,26 +91,26 @@ The final result $A2$ is an array of probabilities representing the model’s co
     <p className="center">$dZ_2 = A_2 - \text{one\_hot\_Y}$</p>
     
 2. We then calculate the gradients of the weights and biases for the output layer (dW2, db2). These gradients tell us how much to adjust the weights and biases to reduce the error.
-    <p className="center">
+    <div className="center">
     $dW_2 = \frac{1}{m} dZ_2 \cdot A_1^T$
     
     $db_2 = \frac{1}{m} \sum dZ_2$
-    </p>
+    </div>
 3. Next, we propagate the error backward to the hidden layer. Using the derivative of the ReLU function, we calculate dZ1, the gradient of the loss with respect to Z1.
     
     <p className="center">$dZ_1 = W_2^T \cdot dZ_2 \cdot \text{ReLU\_deriv}(Z_1)$</p>
     
 4. We then calculate dW1 and db1 for the first layer:
-    <p className="center">
+    <div className="center">
     $dW_1 = \frac{1}{m} dZ_1 \cdot X^T$
     
     $db_1 = \frac{1}{m} \sum dZ_1$
-    </p>
+    </div>
 
 ### Updating Parameters
 
 After calculating the gradients, we use **gradient descent** to update the parameters, moving in the direction that reduces the network’s error. This is achieved by adjusting the weights and biases using the gradients calculated during backward propagation. The formulas for updating each parameter are as follows:
-<p className="center">
+<div className="center">
 $W_1 = W_1 - \alpha \cdot dW_1$
 
 $b_1 = b_1 - \alpha \cdot db_1$
@@ -118,7 +118,7 @@ $b_1 = b_1 - \alpha \cdot db_1$
 $W_2 = W_2 - \alpha \cdot dW_2$
 
 $b_2 = b_2 - \alpha \cdot db_2$
-</p>
+</div>
 where  $\alpha$  is the **learning rate**, a hyperparameter that controls how large the adjustments are in each iteration. Lower values of  $\alpha$  lead to smaller, more precise updates, while higher values can speed up training but may risk overshooting the minimum error.
 
 Each parameter update reflects the network’s learning from the data. By repeating these updates over many iterations, the network minimizes the error and improves its ability to make accurate predictions.
