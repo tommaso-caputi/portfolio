@@ -1,6 +1,7 @@
 import type { MDXComponents } from 'mdx/types';
 import Image, { ImageProps } from 'next/image';
 import 'katex/dist/katex.min.css';
+import { CodeBlock, androidstudio, tomorrow } from 'react-code-blocks';
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
     return {
@@ -8,7 +9,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
             <h1 className="text-4xl md:text-5xl font-bold pb-10">{children}</h1>
         ),
         h2: ({ children }) => (
-            <h3 className="subparagraph-title">{children}</h3>
+            <h2 className="subparagraph-title">{children}</h2>
         ),
         h3: ({ children }) => (
             <h3 className="subparagraph-title2">{children}</h3>
@@ -25,9 +26,20 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
             );
         },
         p: ({ children }) => <p className="normal-text">{children}</p>,
-
-        ol: ({ children }) => <ol className="numbered-list pl-5">{children}</ol>,
-        ul: ({ children }) => <ul className="list-disc pl-5">{children}</ul>,
-        li: ({ children }) => <li className="mb-2">{children}</li>,
+        ol: ({ children }) => <ol className="numbered-list">{children}</ol>,
+        ul: ({ children }) => <ul className="bulleted-list">{children}</ul>,
+        li: ({ children }) => <li className="">{children}</li>,
+        pre: ({ children, className }) => {
+            const language = className?.replace(/language-/, '') || 'python';
+            return (
+                <div className="code-container md:w-full">
+                    <CodeBlock
+                        text={(children as React.ReactElement).props?.children}
+                        language={language}
+                        theme={androidstudio}
+                    />
+                </div>
+            );
+        }
     };
 }
