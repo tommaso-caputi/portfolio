@@ -17,7 +17,7 @@ export default function Post2() {
                             <p style={{ fontSize: '17px' }} className='font-medium'>Hopfield Network Python implementation</p>
                         </div>
                     </div>
-                    <p className="text-xs text-slate-300 pb-2" style={{ color: '#00000060' }}>August 18, 2024</p>
+                    <p className="text-xs text-slate-300 pb-2" style={{ color: '#00000060' }}>November 6, 2024</p>
                 </div>
                 <div className={`transition-opacity duration-[1000ms] ${visibleSections[1] ? 'opacity-100' : 'opacity-0'}`}>
                     <Post />
