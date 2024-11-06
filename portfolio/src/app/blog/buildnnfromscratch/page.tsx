@@ -22,6 +22,13 @@ export default function Post2() {
                 <div className={`transition-opacity duration-[1000ms] ${visibleSections[1] ? 'opacity-100' : 'opacity-0'}`}>
                     <Post />
                 </div>
+                <footer>
+                    <div className="flex flex-row space-x-4">
+                        <a href="https://colab.research.google.com/drive/10a-nPV6WX6iYupQZ98zwdfTJF9f1vntQ?usp=sharing" className="flex flex-row">
+                            <p className="underline underline-offset-4 font-medium ">Colab</p>&#8599;
+                        </a>
+                    </div>
+                </footer>
             </div>
             <Bar />
         </div>

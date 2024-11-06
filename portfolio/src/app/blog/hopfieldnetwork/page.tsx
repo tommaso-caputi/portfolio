@@ -221,6 +221,13 @@ show_array(state)`}
                         <p className="normal-text">However, Hopfield networks also have limitations. One key limitation is their <strong>storage capacity</strong>. The network can store up to approximately <strong>0.15 × N</strong> patterns reliably, where <strong>N</strong> is the number of neurons. If more patterns are stored, the network may struggle to distinguish between them, leading to incorrect reconstructions or “spurious states” that don’t correspond to any of the stored patterns. Despite this, Hopfield networks laid foundational principles for later neural network models and remain a fundamental concept in the field of artificial intelligence and cognitive science.</p>
                     </section>
                 </div>
+                <footer>
+                    <div className="flex flex-row space-x-4">
+                        <a href="https://colab.research.google.com/drive/1YOUd-3EmDwbYYoRKfac4jBQNr4-2DJUl?usp=sharing" className="flex flex-row">
+                            <p className="underline underline-offset-4 font-medium ">Colab</p>&#8599;
+                        </a>
+                    </div>
+                </footer>
             </div>
             <Bar />
         </div>
