@@ -139,7 +139,8 @@ Each parameter update reflects the network’s learning from the data. By repeat
     n = x_train[0].shape[0] * x_train[0].shape[0]  # Flatten 28x28 images to 784-length vector
     m = x_train.shape[0]                           # Number of training examples
     x_train = x_train.reshape(x_train.shape[0], n).T / 255  # Normalize pixel values to 0-1
-    x_test = x_test.reshape(x_test.shape[0], n).T / 255```
+    x_test = x_test.reshape(x_test.shape[0], n).T / 255
+    ```
     
 2. **Initialize Parameters**
     
@@ -151,7 +152,8 @@ Each parameter update reflects the network’s learning from the data. By repeat
         b1 = np.random.rand(10, 1) - 0.5    # Biases for hidden layer
         W2 = np.random.rand(10, 10) - 0.5   # Weights for output layer
         b2 = np.random.rand(10, 1) - 0.5    # Biases for output layer
-        return W1, b1, W2, b2```
+        return W1, b1, W2, b2
+    ```
     
 3. **Define Activation Functions**
     
@@ -163,7 +165,8 @@ Each parameter update reflects the network’s learning from the data. By repeat
     
     def softmax(Z):
         A = np.exp(Z) / sum(np.exp(Z))
-        return A```
+        return A
+    ```
     
 4. **Forward Propagation**
     
@@ -175,7 +178,8 @@ Each parameter update reflects the network’s learning from the data. By repeat
         A1 = ReLU(Z1)             # Apply ReLU activation
         Z2 = W2.dot(A1) + b2      # Linear transformation for output layer
         A2 = softmax(Z2)          # Apply softmax activation for output layer
-        return Z1, A1, Z2, A2```
+        return Z1, A1, Z2, A2
+    ```
     
 5. **Backward Propagation**
     
@@ -199,7 +203,8 @@ Each parameter update reflects the network’s learning from the data. By repeat
         dZ1 = W2.T.dot(dZ2) * ReLU_deriv(Z1)  # Gradient for hidden layer
         dW1 = 1 / m * dZ1.dot(X.T)        # Gradient of weights for hidden layer
         db1 = 1 / m * np.sum(dZ1)         # Gradient of biases for hidden layer
-        return dW1, db1, dW2, db2```
+        return dW1, db1, dW2, db2
+    ```
     
 6. **Update Parameters**
     
@@ -211,7 +216,8 @@ Each parameter update reflects the network’s learning from the data. By repeat
         b1 = b1 - alpha * db1
         W2 = W2 - alpha * dW2
         b2 = b2 - alpha * db2
-        return W1, b1, W2, b2```
+        return W1, b1, W2, b2
+    ```
     
 7. **Prediction and Accuracy Functions**
     
@@ -222,7 +228,8 @@ Each parameter update reflects the network’s learning from the data. By repeat
         return np.argmax(A2, 0)
     
     def get_accuracy(predictions, Y):
-        return np.sum(predictions == Y) / Y.size```
+        return np.sum(predictions == Y) / Y.size
+    ```
     
 8. **Gradient Descent and Training**
     
@@ -238,7 +245,8 @@ Each parameter update reflects the network’s learning from the data. By repeat
             if i % 50 == 0:
                 predictions = get_predictions(A2)
                 print(f"Iteration {i}: Accuracy = {get_accuracy(predictions, Y)}")
-        return W1, b1, W2, b2```
+        return W1, b1, W2, b2
+        ```
     
 9. **Testing the Model on New Data**
     
@@ -252,7 +260,8 @@ Each parameter update reflects the network’s learning from the data. By repeat
     print(get_predictions(forward_prop(W1, b1, W2, b2, x_test[:, image_index, None])[3]))
     image = x_test[:, image_index].reshape(28, 28)
     plt.imshow(image, cmap='gray')
-    plt.show()```
+    plt.show()
+    ```
 
 ## Summary
 
