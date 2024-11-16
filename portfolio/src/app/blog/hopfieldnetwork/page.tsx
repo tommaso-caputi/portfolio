@@ -27,6 +27,9 @@ export default function Post1() {
                         <a href="https://colab.research.google.com/drive/1YOUd-3EmDwbYYoRKfac4jBQNr4-2DJUl?usp=sharing" className="flex flex-row">
                             <p className="underline underline-offset-4 font-medium ">Colab</p>&#8599;
                         </a>
+                        <a href="https://hopfield-network-visualization.vercel.app/" className="flex flex-row">
+                            <p className="underline underline-offset-4 font-medium ">Visualization</p>&#8599;
+                        </a>
                     </div>
                 </footer>
             </div>
