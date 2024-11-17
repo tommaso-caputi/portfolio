@@ -35,7 +35,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         pre: ({ children, className }) => {
             const language = className?.replace(/language-/, '') || 'python';
             return (
-                <div className="code-container md:w-full">
+                <div className="code-container">
                     <CodeBlock
                         text={(children as React.ReactElement).props?.children}
                         language={language}
