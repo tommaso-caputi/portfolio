@@ -30,6 +30,9 @@ export default function Post1() {
                         <a href="https://hopfield-network-visualization.vercel.app/" className="flex flex-row">
                             <p className="underline underline-offset-4 font-medium ">Visualization</p>&#8599;
                         </a>
+                        <a href="https://medium.com/@tommasocaputi85/hopfield-network-python-implementation-05a9f2f337de" className="flex flex-row">
+                            <p className="underline underline-offset-4 font-medium ">Medium</p>&#8599;
+                        </a>
                     </div>
                 </footer>
             </div>

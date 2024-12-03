@@ -27,6 +27,9 @@ export default function Post2() {
                         <a href="https://colab.research.google.com/drive/10a-nPV6WX6iYupQZ98zwdfTJF9f1vntQ?usp=sharing" className="flex flex-row">
                             <p className="underline underline-offset-4 font-medium ">Colab</p>&#8599;
                         </a>
+                        <a href="https://medium.com/@tommasocaputi85/build-neural-network-from-scratch-in-python-33e4e8f417ac" className="flex flex-row">
+                            <p className="underline underline-offset-4 font-medium ">Medium</p>&#8599;
+                        </a>
                     </div>
                 </footer>
             </div>
