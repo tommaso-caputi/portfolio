@@ -6,6 +6,11 @@ import pageLoader from "@/components/pageLoader";
 export default function Blog() {
     const posts = [
         {
+            title: "How to Fine-Tune GPT-2",
+            date: '15-12-2024',
+            url: "/blog/howtofinetune"
+        },
+        {
             title: "Build Neural Network from Scratch in Python",
             date: '06-11-2024',
             url: "/blog/buildnnfromscratch"

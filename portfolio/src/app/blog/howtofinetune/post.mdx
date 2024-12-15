@@ -1,0 +1,146 @@
+# 4
+
+## Introduction
+
+Fine-tuning GPT-2 enables you to customize its capabilities for specific tasks, domains, or creative goals. This guide will take you through the process of fine-tuning GPT-2 using Hugging Face’s *Transformers* and *Datasets* libraries, along with **W&B** (*Weights and Biases*) for experiment tracking. Whether you aim to create a chatbot, generate domain-specific text, or mimic a unique writing style, this tutorial will provide a clear roadmap.
+
+## What Is Fine-Tuning?
+
+Fine-tuning involves taking a pre-trained model like GPT-2, which has learned general language patterns on massive datasets, and training it further on a smaller, task-specific dataset. This process allows the model to:
+
+- Adapt to specialized domains such as legal, medical, or technical content.
+- Generate text in a particular tone or style.
+- Improve performance on targeted tasks like summarization, text classification, or creative writing.
+
+Fine-tuning is akin to teaching an already-knowledgeable model how to excel at a niche skill. It builds on the model’s broad knowledge, focusing it to suit your dataset’s needs.
+
+In the code we’ll implement, you’ll see how to load GPT-2, tokenize and preprocess the dataset, set up training configurations, and evaluate the model’s performance. By the end, you’ll have a customized GPT-2 model ready for your unique use case.
+
+## Fine-Tune
+
+For fine-tuning, we’ll use the following tools:
+
+- **Hugging Face Transformers**: To load pre-trained GPT-2 and its tokenizer.
+- **Hugging Face Datasets**: For handling and preprocessing datasets.
+- **Weights and Biases (W&B)**: To track experiments and visualize results.
+- **A GPU Environment**: To ensure efficient training (e.g., Google Colab, AWS, or a local setup with CUDA).
+
+Let’s dive into the steps.
+
+### Import Libraries
+
+Install the required libraries and import them into your Python environment:
+
+```bash
+pip install torch transformers datasets wandb
+```
+
+Now, import the necessary modules:
+
+```python
+from transformers import AutoTokenizer, AutoModelForCausalLM, Trainer, TrainingArguments
+from datasets import load_dataset
+```
+
+These libraries provide all the tools needed for model loading, dataset handling, and training.
+
+### Load the Model
+
+Start by loading the pre-trained GPT-2 model and tokenizer from Hugging Face’s model hub. This is the base model we’ll fine-tune.
+
+```python
+tokenizer = AutoTokenizer.from_pretrained('gpt2')
+model = AutoModelForCausalLM.from_pretrained('gpt2').to(device)
+```
+
+To ensure the tokenizer aligns with the model’s input structure, set the End-of-Sequence (EOS) token as the padding token:
+
+```python
+tokenizer.pad_token = tokenizer.eos_token
+```
+
+This configuration ensures all sequences have consistent lengths during training.
+
+### Load the Dataset
+
+We’ll use **WikiText-2**, a dataset of clean Wikipedia articles, as an example. You can replace it with any dataset relevant to your task.
+
+```python
+dataset = load_dataset('wikitext', 'wikitext-2-raw-v1')
+```
+
+This dataset is split into training and validation sets, which we’ll use to train the model and monitor its performance.
+
+### Tokenize Function
+
+Tokenization is crucial to convert raw text into numerical data that the model understands. The function below prepares the dataset for training:
+
+```python
+def tokenize_function(examples):
+    inputs = tokenizer(
+        examples['text'], truncation=True, padding='max_length', max_length=128
+    )
+    inputs['labels'] = inputs['input_ids'].copy()  # Targets match the inputs for language modeling
+    return inputs
+
+tokenized_datasets = dataset.map(tokenize_function, batched=True)
+```
+
+This step tokenizes the text, truncates or pads it to a fixed length, and assigns the same data to input and output labels for supervised learning.
+
+### Training
+
+Next, define training parameters using Hugging Face’s TrainingArguments. These control batch size, evaluation frequency, and optimization settings.
+
+```python
+training_args = TrainingArguments(
+    output_dir='./results',
+    evaluation_strategy='epoch',
+    num_train_epochs=1,
+    per_device_train_batch_size=4,
+    per_device_eval_batch_size=4,
+    warmup_steps=500,
+    weight_decay=0.01,
+    logging_dir='./logs',
+    logging_steps=10
+)
+```
+
+Train the model using the Trainer class, which integrates the model, dataset, and training arguments.
+
+```python
+trainer = Trainer(
+    model=model,
+    args=training_args,
+    train_dataset=tokenized_datasets['train'],
+    eval_dataset=tokenized_datasets['validation'],
+)
+
+trainer.train()
+```
+
+During training, the model adjusts its weights based on the WikiText-2 dataset, learning its structure, tone, and patterns.
+
+Save the trained model for later use:
+
+```python
+model.save_pretrained('./results/model')
+tokenizer.save_pretrained('./results/model')
+```
+
+### Inference
+
+After fine-tuning, the model can generate text tailored to your dataset. Use the code below to test it with a custom prompt:
+
+```python
+inputs = tokenizer('Can you tell me a story', return_tensors='pt')
+outputs = model.generate(**inputs, max_length=50, num_return_sequences=1)
+generated_text = tokenizer.decode(outputs[0], skip_special_tokens=True)
+print(generated_text)
+```
+
+The model will generate text that reflects the patterns and language it learned during fine-tuning.
+
+## Conclusion
+
+Fine-tuning GPT-2 allows you to tailor its capabilities to your specific needs, from domain-specific applications to creative writing projects. With Hugging Face’s tools and W&B for tracking, the process is straightforward and flexible. Experiment with different datasets and configurations to make the most of GPT-2’s potential.
