@@ -2,11 +2,18 @@ import Image from 'next/image';
 
 export default function ProjectsSection() {
     const projects = [
-        {
+        /* {
             title: "Masseria Coppa's delivery app",
             description: "The adoption of delivery management software for handling orders and deliveries has improved the company's operations by 70%.",
             period: '2023 - present',
             imageUrl: '/LogoDeliveryApp.png'
+        } */
+        {
+            title: 'Karis',
+            description: "Karis is a digital platform for Caritas organizations, designed to streamline warehouse management, beneficiary tracking, and resource coordination between parishes. Built with Next.js, React, and PostgreSQL.",
+            period: '2025 - present',
+            imageUrl: '/LogoKaris.png',
+            tryItOutUrl: 'https://github.com/tommaso-caputi/karis'
         },
         {
             title: 'Dear Diary',
